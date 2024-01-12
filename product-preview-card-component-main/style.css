@@ -278,5 +278,7 @@ font-family: 'Montserrat', sans-serif;
 
     .attribution {
     margin-top: 15px;
+    font-size: 0.9em;
+    text-align: center;
     }   
 }

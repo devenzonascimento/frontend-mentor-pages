@@ -100,8 +100,10 @@ body {
     background-color: rgba(128, 128, 128, 0.247);
 }
 
-footer {
+.attribution {
     margin-top: 20px;
+    font-size: 0.9em;
+    text-align: center;
 }
 
 

@@ -163,6 +163,11 @@ body {
 .attribution {
     margin-top: 20px;
 }
+.attribution a {
+    color: purple;
+    font-size: 0.9em;
+    text-align: center;
+}
 
 
 @media only screen and (max-width: 600px) {
