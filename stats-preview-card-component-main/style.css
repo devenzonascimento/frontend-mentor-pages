@@ -23,6 +23,7 @@ body {
     max-width: 1080px;
     min-width: 720px;
     display: flex;
+    margin: 0 20px;
     background-color: hsl(244, 38%, 16%);
     border-radius: 30px;
     overflow: hidden;
