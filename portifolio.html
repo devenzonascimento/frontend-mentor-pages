@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desafios da Frontend Mentor</title>
+
     <style>
+
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap'); /*font-family: 'Work Sans', sans-serif;*/
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Salsa&display=swap');/*font-family: 'Pacifico', cursive;
-font-family: 'Salsa', cursive;*/
+                        font-family: 'Salsa', cursive;*/
 
 
         * {
@@ -84,7 +86,7 @@ font-family: 'Salsa', cursive;*/
             cursor: pointer;
         }
 
-        .container a > img {
+        .container > img {
             display: block;
             width: 300px;
             height: 190px;
@@ -97,12 +99,17 @@ font-family: 'Salsa', cursive;*/
             width: max-content;
             transform: translate(-50%, -50%);
             opacity: 0; 
-            transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out, font-size 0.5s ease-in-out;
             color: white;
         }
 
         .container:hover .texto {
             opacity: 1; 
+        }
+
+        .texto:hover {
+            font-size: 1.3em;
+            text-decoration: underline;
         }
 
         .filtro {
@@ -128,7 +135,7 @@ font-family: 'Salsa', cursive;*/
             font: normal 1.2em 'Salsa';
         }
 
-        footer a {
+        footer > a {
             color: rgb(10, 194, 250);
         }
 
@@ -144,63 +151,64 @@ font-family: 'Salsa', cursive;*/
         <div class="projeto">
             <div class="titulo">Blog Preview Card</div>
             <div class="container">
-                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/blog-preview-card-main/index.html" target="_blank"><img src="blog-preview-card-main/design/desktop-design.jpg" alt="blog-preview-card.jpg"></a>
+                <img src="blog-preview-card-main/design/desktop-design.jpg" alt="blog-preview-card.jpg">
                 <div class="filtro"></div>
-                <span class="texto">Visitar Página</span>
+                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/blog-preview-card-main/index.html" target="_blank"><span class="texto">Visitar Página</span></a>
+
             </div>
         </div>
         
         <div class="projeto">
             <div class="titulo">Faq Accordion</div>
             <div class="container">
-                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/faq-accordion-main/index.html" target="_blank"><img src="faq-accordion-main/design/desktop-design.jpg" alt="faq-accordion.jpg"></a>
+                <img src="faq-accordion-main/design/desktop-design.jpg" alt="faq-accordion.jpg">
                 <div class="filtro"></div>
-                <span class="texto">Visitar Página</span>
+                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/faq-accordion-main/index.html" target="_blank"><span class="texto">Visitar Página</span></a>
             </div>
         </div>
         
         <div class="projeto">
             <div class="titulo">NFT Preview Card</div>
-            <div class="container">
-                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/nft-preview-card-component-main/index.html" target="_blank"><img src="nft-preview-card-component-main/design/desktop-design.jpg" alt="nft-preview-card.jpg"></a>
+            <div class="container">                
+                <img src="nft-preview-card-component-main/design/desktop-design.jpg" alt="nft-preview-card.jpg">
                 <div class="filtro"></div>
-                <span class="texto">Visitar Página</span>
+                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/nft-preview-card-component-main/index.html" target="_blank"><span class="texto">Visitar Página</span></a>
             </div>
         </div>
         
         <div class="projeto">
             <div class="titulo">Order Summary</div>
-            <div class="container">
-                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/order-summary-component-main/index.html" target="_blank"><img src="order-summary-component-main/design/desktop-design.jpg" alt="order-summary.jpg"></a>
+            <div class="container">                
+                <img src="order-summary-component-main/design/desktop-design.jpg" alt="order-summary.jpg">
                 <div class="filtro"></div>
-                <span class="texto">Visitar Página</span>
+                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/order-summary-component-main/index.html" target="_blank"><span class="texto">Visitar Página</span></a>
             </div>
         </div>
         
         <div class="projeto">
             <div class="titulo">Product Preview Card</div>
-            <div class="container">
-                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/product-preview-card-component-main/index.html" target="_blank"><img src="product-preview-card-component-main/design/desktop-design.jpg" alt="product-preview-card.jpg"></a>
+            <div class="container">                
+                <img src="product-preview-card-component-main/design/desktop-design.jpg" alt="product-preview-card.jpg">
                 <div class="filtro"></div>
-                <span class="texto">Visitar Página</span>
+                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/product-preview-card-component-main/index.html" target="_blank"><span class="texto">Visitar Página</span></a>
             </div>
         </div>
         
         <div class="projeto">
             <div class="titulo">QR Code</div>
-            <div class="container">
-                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/qr-code-component-main/index.html" target="_blank"><img src="qr-code-component-main/design/desktop-design.jpg" alt="qr-code.jpg"></a>
+            <div class="container">                
+                <img src="qr-code-component-main/design/desktop-design.jpg" alt="qr-code.jpg">
                 <div class="filtro"></div>
-                <span class="texto">Visitar Página</span>
+                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/qr-code-component-main/index.html" target="_blank"><span class="texto">Visitar Página</span></a>
             </div>
         </div>
         
         <div class="projeto">
             <div class="titulo">Results Summary</div>
-            <div class="container">
-                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/results-summary-component-main/index.html" target="_blank"><img src="results-summary-component-main/design/desktop-design.jpg" alt="results-summary.jpg"></a>
+            <div class="container">                
+                <img src="results-summary-component-main/design/desktop-design.jpg" alt="results-summary.jpg">
                 <div class="filtro"></div>
-                <span class="texto">Visitar Página</span>
+                <a href="https://devenzonascimento.github.io/frontend-mentor-pages/results-summary-component-main/index.html" target="_blank"><span class="texto">Visitar Página</span></a>
             </div>
         </div>
     </main>
