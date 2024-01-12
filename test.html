@@ -5,25 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap'); /*font-family: 'Work Sans', sans-serif;*/
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Salsa&display=swap');/*font-family: 'Pacifico', cursive;
+font-family: 'Salsa', cursive;*/
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
         body {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            font: 500 1.2em sans-serif;
+            justify-content: center;
+            align-items: center;
+            font: 700 1.2em 'Work Sans', sans-serif;
+            background-image: linear-gradient(150deg, blue, rgb(162, 0, 255), purple);
+        }
+
+        header {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+
+        header h1 {
+            font: normal 1.2em 'Salsa';
+        }
+
+        main {
+            max-width: 90%;
+            min-height: 90vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            background-image: linear-gradient(to bottom, black, rgb(51, 50, 50), black);
+            border-radius: 25px;
         }
 
         .projeto {
-            max-width: max-content;
+            height: 300px;
+            width: 325px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            margin-left: 50px;
+            margin: 20px;
+            background-image: linear-gradient(150deg, blue, rgb(162, 0, 255), purple);
+            border-radius: 20px;
         }
 
         .titulo {
-            width: 100%;
+            width: 90%;
             margin: 10px 0;
             padding: 10px 0;
             text-align: center;
@@ -43,8 +86,8 @@
 
         .container a > img {
             display: block;
-            width: 325px;
-            transition: width 1s ease-in-out;
+            width: 300px;
+            height: 190px;
         }
 
         .texto {
@@ -78,75 +121,82 @@
         .container:hover .filtro {
             opacity: 0.5;
         }
-    
-        .container:hover img{
-            width: 300px;
-        }
+
     </style>
 </head>
 <body>
 
-    <div class="projeto">
-        <div class="titulo">Blog Preview Card</div>
-        <div class="container">
-            <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="blog-preview-card-main/design/desktop-design.jpg" alt="blog-preview-card.jpg"></a>
-            <div class="filtro"></div>
-            <span class="texto">Visitar Página</span>
+    <header>
+        <h1>Desafios da Frontend Mentor</h1>
+    </header>
+
+    <main>
+        <div class="projeto">
+            <div class="titulo">Blog Preview Card</div>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="blog-preview-card-main/design/desktop-design.jpg" alt="blog-preview-card.jpg"></a>
+                <div class="filtro"></div>
+                <span class="texto">Visitar Página</span>
+            </div>
         </div>
-    </div>
-    
-    <div class="projeto">
-        <div class="titulo">Blog Preview Card</div>
-        <div class="container">
-            <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="faq-accordion-main/design/desktop-design.jpg" alt="faq-accordion.jpg"></a>
-            <div class="filtro"></div>
-            <span class="texto">Visitar Página</span>
+        
+        <div class="projeto">
+            <div class="titulo">Faq Accordion</div>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="faq-accordion-main/design/desktop-design.jpg" alt="faq-accordion.jpg"></a>
+                <div class="filtro"></div>
+                <span class="texto">Visitar Página</span>
+            </div>
         </div>
-    </div>
-    
-    <div class="projeto">
-        <div class="titulo">Blog Preview Card</div>
-        <div class="container">
-            <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="nft-preview-card-component-main/design/desktop-design.jpg" alt="nft-preview-card.jpg"></a>
-            <div class="filtro"></div>
-            <span class="texto">Visitar Página</span>
+        
+        <div class="projeto">
+            <div class="titulo">NFT Preview Card</div>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="nft-preview-card-component-main/design/desktop-design.jpg" alt="nft-preview-card.jpg"></a>
+                <div class="filtro"></div>
+                <span class="texto">Visitar Página</span>
+            </div>
         </div>
-    </div>
-    
-    <div class="projeto">
-        <div class="titulo">Blog Preview Card</div>
-        <div class="container">
-            <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="order-summary-component-main/design/desktop-design.jpg" alt="order-summary.jpg"></a>
-            <div class="filtro"></div>
-            <span class="texto">Visitar Página</span>
+        
+        <div class="projeto">
+            <div class="titulo">Order Summary</div>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="order-summary-component-main/design/desktop-design.jpg" alt="order-summary.jpg"></a>
+                <div class="filtro"></div>
+                <span class="texto">Visitar Página</span>
+            </div>
         </div>
-    </div>
-    
-    <div class="projeto">
-        <div class="titulo">Blog Preview Card</div>
-        <div class="container">
-            <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="product-preview-card-component-main/design/desktop-design.jpg" alt="product-preview-card.jpg"></a>
-            <div class="filtro"></div>
-            <span class="texto">Visitar Página</span>
+        
+        <div class="projeto">
+            <div class="titulo">Product Preview Card</div>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="product-preview-card-component-main/design/desktop-design.jpg" alt="product-preview-card.jpg"></a>
+                <div class="filtro"></div>
+                <span class="texto">Visitar Página</span>
+            </div>
         </div>
-    </div>
-    
-    <div class="projeto">
-        <div class="titulo">Blog Preview Card</div>
-        <div class="container">
-            <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="qr-code-component-main/design/desktop-design.jpg" alt="qr-code.jpg"></a>
-            <div class="filtro"></div>
-            <span class="texto">Visitar Página</span>
+        
+        <div class="projeto">
+            <div class="titulo">QR Code</div>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="qr-code-component-main/design/desktop-design.jpg" alt="qr-code.jpg"></a>
+                <div class="filtro"></div>
+                <span class="texto">Visitar Página</span>
+            </div>
         </div>
-    </div>
-    
-    <div class="projeto">
-        <div class="titulo">Blog Preview Card</div>
-        <div class="container">
-            <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="results-summary-component-main/design/desktop-design.jpg" alt="results-summary.jpg"></a>
-            <div class="filtro"></div>
-            <span class="texto">Visitar Página</span>
+        
+        <div class="projeto">
+            <div class="titulo">Results Summary</div>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="results-summary-component-main/design/desktop-design.jpg" alt="results-summary.jpg"></a>
+                <div class="filtro"></div>
+                <span class="texto">Visitar Página</span>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a></p>
+    </footer>
 </body>
 </html>
