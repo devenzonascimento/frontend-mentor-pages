@@ -2,9 +2,66 @@
 
 ### Este é o repositorio que eu uso para guardar a resolução dos desafios da [Frontend Mentor](https://www.frontendmentor.io/challenges)
 
+<body>  
+    
 <div class="projeto">
+    <div class="titulo">Blog Preview Card</div>
     <div class="container">
-        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="blog-preview-card-main/design/desktop-design.jpg" alt="blog-preview-card-main"></a>
+        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="blog-preview-card-main/design/desktop-design.jpg" alt="blog-preview-card.jpg"></a>
+        <div class="filtro"></div>
+        <span class="texto">Visitar Página</span>
+    </div>
+</div>
+
+<div class="projeto">
+    <div class="titulo">Faq Accordion</div>
+    <div class="container">
+        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="faq-accordion-main/design/desktop-design.jpg" alt="faq-accordion.jpg"></a>
+        <div class="filtro"></div>
+        <span class="texto">Visitar Página</span>
+    </div>
+</div>
+
+<div class="projeto">
+    <div class="titulo">NFT Preview Card</div>
+    <div class="container">
+        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="nft-preview-card-component-main/design/desktop-design.jpg" alt="nft-preview-card.jpg"></a>
+        <div class="filtro"></div>
+        <span class="texto">Visitar Página</span>
+    </div>
+</div>
+
+<div class="projeto">
+    <div class="titulo">Order Summary</div>
+    <div class="container">
+        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="order-summary-component-main/design/desktop-design.jpg" alt="order-summary.jpg"></a>
+        <div class="filtro"></div>
+        <span class="texto">Visitar Página</span>
+    </div>
+</div>
+
+<div class="projeto">
+    <div class="titulo">Product Preview Card</div>
+    <div class="container">
+        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="product-preview-card-component-main/design/desktop-design.jpg" alt="product-preview-card.jpg"></a>
+        <div class="filtro"></div>
+        <span class="texto">Visitar Página</span>
+    </div>
+</div>
+
+<div class="projeto">
+    <div class="titulo">QR Code</div>
+    <div class="container">
+        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="qr-code-component-main/design/desktop-design.jpg" alt="qr-code.jpg"></a>
+        <div class="filtro"></div>
+        <span class="texto">Visitar Página</span>
+    </div>
+</div>
+
+<div class="projeto">
+    <div class="titulo">Results Summary</div>
+    <div class="container">
+        <a href="https://www.linkedin.com/in/enzo-nascimento-4843a42a8/"><img src="results-summary-component-main/design/desktop-design.jpg" alt="results-summary.jpg"></a>
         <div class="filtro"></div>
         <span class="texto">Visitar Página</span>
     </div>
