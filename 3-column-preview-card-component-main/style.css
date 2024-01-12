@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+/*font-family: 'Big Shoulders Display', sans-serif;
+font-family: 'Lexend Deca', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 95%);
+}
+
+.container {
+    height: 500px;
+    max-width: 900px;
+    min-width: 700px;
+    display: flex;
+    margin: 0 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cards {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px;
+}
+
+#card1 {
+    background-color: hsl(31, 77%, 52%);
+}
+#card2 {
+    background-color: hsl(184, 100%, 22%);
+}
+#card3 {
+    background-color: hsl(179, 100%, 13%);
+}
+
+.cards img {
+    width: 35%;
+}
+
+.cards h2 {
+    font: bold 3em 'Big Shoulders Display', sans-serif;
+    color: hsl(0, 0%, 95%);
+}
+
+.cards p {
+    line-height: 1.5em;
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.cards button {
+    width: 60%;
+    margin-top: 70px;
+    padding: 15px;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 30px;
+    border: 1px solid;
+}
+
+#card1 button:hover,
+#card2 button:hover,
+#card3 button:hover {
+    background-color: transparent;
+    color: hsl(0, 0%, 95%);
+    border: 1px solid hsl(0, 0%, 95%);  
+}
+
+#card1 button {
+    color: hsl(31, 77%, 52%);
+}
+#card2 button {
+    color: hsl(184, 100%, 22%);
+}
+#card3 button {
+    color: hsl(179, 100%, 13%);
+}
+
+.attribution {
+    margin-top: 50px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+@media only screen and (max-width: 740px) {
+
+    .container {
+        height: max-content;
+        max-width: 400px;
+        min-width: 275px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding: 45px;
+    }
+
+    .cards h2, p {
+        margin-top: 30px;
+    }
+
+    .cards button {
+        margin-top: 30px;
+    }
+}
