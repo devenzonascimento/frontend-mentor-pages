@@ -25,18 +25,21 @@ body {
     display: flex;
     margin: 0 20px;
     background-color: hsl(244, 38%, 16%);
-    border-radius: 30px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .container > .img-container {
     height: auto;
     width: 50%;
+    background-color: rgb(169, 94, 199);
+    opacity: 0.7;
 }
 
 .img-container > img {
     display: block;
     width: 100%;
+    mix-blend-mode: multiply;
 }
 
 .container > .info-container {
@@ -64,6 +67,7 @@ body {
 }
 
 .info > p {
+    line-height: 2em;
     font-weight: 400;
     color: hsla(0, 0%, 100%, 0.75);
 }
@@ -80,7 +84,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    font-size: 1em;
 }
 
 .status > .value {
@@ -91,7 +96,7 @@ body {
 .status > .type {
     color: hsla(0, 0%, 100%, 0.75);
     font-family: 'Lexend Deca';
-    font-size: 0.7em;
+    
 }
 
 .attribution {
@@ -134,7 +139,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
     }
     
     .status > .value {
