@@ -4,7 +4,7 @@ plusButtons.forEach(button => {
   button.addEventListener("click", () => {
     const container = button.closest('.mini-container');
     const paragraphs = container.querySelectorAll('p');
-
+    
     button.classList.toggle("active");
     paragraphs.forEach(paragraph => {
       if (button.classList.contains("active")) {
