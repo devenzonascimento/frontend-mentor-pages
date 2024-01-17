@@ -15,7 +15,6 @@ ratingButtons.forEach(button => {
 
         button.classList.toggle("active");
 
-        //Aplicar estilos ao botão clicado, se necessário
         if (button.classList.contains("active")) {
             button.style.backgroundColor = "hsl(217, 12%, 63%)";
             button.style.color = "white";
@@ -23,17 +22,20 @@ ratingButtons.forEach(button => {
         } else {
             button.style.backgroundColor = "";
             button.style.color = "";
+            result = null
         }
     });
 });
 
 function thankYouState() {
     
-    if (result != 0) {
+    if (result != null) {
         document.getElementsByClassName("rating-state")[0].style.display = "none";
 
         document.getElementById("note").innerHTML = result
         document.getElementsByClassName("result-state")[0].style.display = "flex";
+    } else {
+        alert("Choose a note!")
     }
 }
 
