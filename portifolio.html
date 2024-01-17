@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafios da Frontend Mentor</title>
-
+     
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap'); /*font-family: 'Work Sans', sans-serif;*/
@@ -132,9 +132,21 @@
         }
 
         footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 20px 0;
             color: white;
             font: normal 1.2em 'Salsa';
+        }
+        footer img {
+            display: block;
+            width: 70px;
+            height: 70px;
+            border: 1px solid white;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-image: linear-gradient(to right, black, rgb(75, 74, 74), rgb(179, 177, 177));
         }
 
         footer p a {
@@ -253,6 +265,7 @@
     </main>
 
     <footer>
+        <img src="z-imagens/FotoPerfil-removebg-preview.png" alt="">
         <p>Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a></p>
     </footer>
 </body>
