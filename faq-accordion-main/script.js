@@ -8,7 +8,7 @@ plusButtons.forEach(button => {
     button.classList.toggle("active");
     paragraphs.forEach(paragraph => {
       if (button.classList.contains("active")) {
-        paragraph.style.maxHeight = "100px";
+        paragraph.style.maxHeight = "115px";
         paragraph.style.opacity = "1";
         button.setAttribute("src", "assets/images/icon-minus.svg")
       } else {
