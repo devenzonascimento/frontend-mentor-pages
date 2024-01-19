@@ -1,3 +1,12 @@
+function configContent() {
+    var image = document.querySelectorAll(".hero-img")
+    if (window.innerWidth <= 1024) {
+        image[0].setAttribute("src", "images/hero-mobile.jpg")
+    } else {
+        image[1].setAttribute("src", "images/hero-desktop.jpg")
+    }
+}
+
 function validateEmail () {
     var email = document.getElementById("email");
     var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

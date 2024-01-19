@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body onload="configContent()">
 
   <main>
     <div class="container">
       <div class="info-container">
-        <img src="images/logo.svg" alt="">
+        <img src="images/logo.svg" alt="" id="logo">
+        <img src="" alt="" class="hero-img">
         <h1>
           <strong>We're</strong>
           <br>
@@ -26,8 +27,8 @@
         </h1>
         
         <p>
-          Hello fellow shoppers! We're currently building our new<br>fashion store.
-          Add your email below to stay up-to-date with<br>announcements and our launch deals.
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our launch deals.
         </p>
         <form id="email-box" onsubmit=" return validateEmail()" novalidate>
           <input type="email" name="email" id="email" placeholder="Email Address" required>
@@ -36,17 +37,18 @@
         </form>
         <span class="alerta">Please provide a valide email</span>
       </div>
+      <footer class="attribution">
+        <p>
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a>.
+        </p>
+      </footer>
     </div>
-    <img src="images/hero-desktop.jpg" alt="">
+    <img src="images/hero-desktop.jpg-" alt="" class="hero-img">
   </main>
-  <!--
-  <footer class="attribution">
-    <p>
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a>.
-    </p>
-  </footer>
-  -->
+
+  
+
   <script src="app.js"></script>
 </body>
 </html>
