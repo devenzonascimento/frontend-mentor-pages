@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Base Apparel coming soon</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <div class="info-container">
+        <img src="images/logo.svg" alt="">
+        <h1>
+          <strong>We're</strong>
+          <br>
+          coming
+          <br>
+          soon
+        </h1>
+        
+        <p>
+          Hello fellow shoppers! We're currently building our new<br>fashion store.
+          Add your email below to stay up-to-date with<br>announcements and our launch deals.
+        </p>
+        <form id="email-box" onsubmit=" return validateEmail()" novalidate>
+          <input type="email" name="email" id="email" placeholder="Email Address" required>
+          <img src="images/icon-error.svg" alt="" id="error">
+          <button type="submit"><img src="images/icon-arrow.svg" alt=""></button>
+        </form>
+        <span class="alerta">Please provide a valide email</span>
+      </div>
+    </div>
+    <img src="images/hero-desktop.jpg" alt="">
+  </main>
+  <!--
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a>.
+    </p>
+  </footer>
+  -->
+  <script src="app.js"></script>
+</body>
+</html>
