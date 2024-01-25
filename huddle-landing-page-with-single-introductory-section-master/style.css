@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+:root {
+    --Violet: hsl(257, 40%, 49%);
+    --Soft-Magenta: hsl(300, 69%, 71%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 1px solid black;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/*Ajuste nas cores*/
+
+body {
+    background: var(--Violet) url(images/bg-desktop.svg) top right no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    background-color: white;
+    color: var(--Violet);
+    padding: 20px 70px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.158);
+    width: max-content;
+}
+
+button:hover {
+    background-color: var(--Soft-Magenta);
+    color: white;
+}
+
+ion-icon {
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    font-size: 25px;
+}
+
+ion-icon:hover {
+    color: var(--Soft-Magenta);
+    border: 1px solid var(--Soft-Magenta);
+}
+
+/*Formatação--*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 60px;
+}
+
+.logo {
+    display: block;
+    width: 300px;
+}
+
+.container {
+    max-width: 100%;
+    margin-top: 75px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.container .img-container {
+    max-width: 100%;
+}
+
+.img-container img {
+    display: block;
+    max-width: 100%;
+}
+
+.container .info-container {
+    max-width: 100%;
+    margin-top: 40px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-container h1 {
+    max-width: 515px;
+    font-size: 2.9em;
+}
+
+.info-container p {
+    max-width: 570px;
+    font-size: 1.13em;
+}
+.info-container button {
+    font-size: 1.3em;
+}
+
+.icons-container {
+    align-self: flex-end;
+    display: flex;
+    gap: 15px;
+}
+
+.attribution {
+    align-self: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+    
+    * {
+        border: 1px solid red;
+    }
+
+    body {
+        background-image: url(images/bg-mobile.svg);
+    }
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    
+    * {
+        border: 1px solid yellow;
+    }
+}
