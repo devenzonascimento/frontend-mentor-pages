@@ -17,7 +17,7 @@ font-family: 'Poppins', sans-serif;
     padding: 0;
     outline: 0;
     appearance: 0;
-    border: 1px solid black;
+    border: 0;
     text-decoration: none;
     box-sizing: border-box;
 }
@@ -62,6 +62,14 @@ ion-icon:hover {
 body {
     min-height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    width: max-content;
+    display: flex;
     flex-direction: column;
     margin: 60px;
 }
@@ -71,7 +79,7 @@ body {
     width: 300px;
 }
 
-.container {
+.main-container {
     max-width: 100%;
     margin-top: 75px;
     align-self: center;
@@ -79,8 +87,7 @@ body {
     align-items: center;
     gap: 40px;
 }
-
-.container .img-container {
+.main-container .img-container {
     max-width: 100%;
 }
 
@@ -89,7 +96,7 @@ body {
     max-width: 100%;
 }
 
-.container .info-container {
+.main-container .info-container {
     max-width: 100%;
     margin-top: 40px;
     align-self: flex-start;
@@ -107,6 +114,7 @@ body {
     max-width: 570px;
     font-size: 1.13em;
 }
+
 .info-container button {
     font-size: 1.3em;
 }
@@ -124,25 +132,58 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-    
-    * {
-        border: 1px solid red;
-    }
 
     body {
         background-image: url(images/bg-mobile.svg);
     }
 
     .container {
+        margin: 10px;
+    }
+
+    .main-container {
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .main-container .info-container {
+        align-self: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .icons-container {
+        margin-top: 40px;
+        align-self: center;
+    }
 }
 
-@media only screen and (max-width: 1024px) {
-    
-    * {
-        border: 1px solid yellow;
+@media only screen and (max-width: 767px) {
+
+    .container {
+        margin: 20px;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+    .main-container {
+        gap: 10px;
+    }
+
+    .info-container h1 {
+        font-size: 1.75em;
+    }
+
+    .info-container p {
+        max-width: 570px;
+        font-size: 1.02em;
+    }
+
+    .info-container button {
+        font-size: 1em;
+        padding: 10px 70px;
     }
 }
