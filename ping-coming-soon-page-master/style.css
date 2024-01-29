@@ -150,10 +150,7 @@ form button {
 }
 
 @media only screen and (max-width: 768px) {
-    * {
-        border: 0px solid black;
-    }
-
+    
     .container {
         height: max-content;
         max-width: 100%;
