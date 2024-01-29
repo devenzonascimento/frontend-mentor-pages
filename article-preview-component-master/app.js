@@ -1,6 +1,6 @@
 const shareButton = document.getElementById("icon-share");
 const popUp = document.getElementById("pop-up");
-let newicon = null; // Adicionamos uma variável global para armazenar o newicon
+let newicon = null;
 
 shareButton.addEventListener("click", () => {
     shareButton.classList.toggle("active");

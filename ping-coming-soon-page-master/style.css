@@ -47,7 +47,7 @@ input {
 button {
     background-color: var(--Blue);
     color: white;
-    box-shadow: 4px 4px 5px 2px hsla(223, 87%, 63%, 0.253);
+    box-shadow: 4px 4px 7px 4px hsla(223, 87%, 63%, 0.158);
 }
 
 ion-icon {
@@ -59,12 +59,11 @@ ion-icon {
 ion-icon:hover {
     background-color: var(--Blue);
     color: white;
-    border: 0;
 }
 
 span {
     color: var(--Gray);
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 /*Formatação*/
@@ -78,8 +77,8 @@ body {
 }
 
 .container {
-    height: 100;
-    max-width: max-content;
+    height: max-content;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,23 +93,40 @@ body {
 .container form {
     width: 100%;
     display: flex;
+    align-items: flex-start;
     gap: 20px;
 }
 
+form .email-box {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 form input {
-    width: 70%;
+    width: 100%;
     padding: 20px;
     font-size: 1em;
 }
 
 input::placeholder {
-    
     color: hsl(223, 41%, 82%);
 }
 
+.msg-error {
+    margin-left: 25px;
+    align-self: start;
+    font-size: 0.7em;
+    font-style: italic;
+    color: rgb(252, 83, 83);
+}
+
 form button {
-    width: 30%;
-    padding: 20 0px;
+    width: 35%;
+    padding: 20px;
     border-radius: 40px;
     font-weight: 600;
     font-size: 0.9em;
@@ -130,4 +146,65 @@ form button {
 .attribution {
     margin-top: 30px;
     text-align: center;
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width: 768px) {
+    * {
+        border: 0px solid black;
+    }
+
+    .container {
+        height: max-content;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15px;
+        gap: 40px;
+    }
+
+    .container h1 {
+        font-size: 1.4em;
+    }
+
+    .container > p {
+        font-size: 0.8em;
+    }
+    
+    .container .dashboard {
+        display: block;
+        max-width: 100%;
+    }
+    
+    .container form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    form input {
+        width: 90%;
+        padding: 15px 30px;
+        font-size: 0.8em;
+    }
+
+    .msg-error {
+        margin: 5px;
+        align-self: center;
+        font-size: 0.6em;
+        font-style: italic;
+        color: rgb(252, 83, 83);
+    }
+
+    form button {
+        width: 90%;
+        padding: 12px 0px;
+        border-radius: 40px;
+        font-weight: 400;
+        font-size: 0.9em;
+        letter-spacing: 0.05em;
+    }
 }
