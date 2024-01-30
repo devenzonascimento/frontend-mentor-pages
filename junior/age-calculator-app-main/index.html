@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Age calculator app</title>
+
+</head>
+<body>
+
+  <section>
+    <div class="input-container">
+      <div class="input-box">
+        <label for="day">Day</label>
+        <input name="day" id="day" placeholder="DD">
+      </div>
+
+      <div class="input-box">
+        <label for="month">Month</label>
+        <input name="month" id="month" placeholder="MM">
+      </div>
+
+      <div class="input-box">
+        <label for="year">Year</label>
+        <input name="year" id="year" placeholder="YYYY">
+      </div>
+    </div>
+
+    <div class="line">
+      <button type="submit" onclick="calculate()"><img src="images/icon-arrow.svg" alt=""></button>
+    </div>
+
+    <div class="results">
+      <p><span id="year-result">--</span> years</p>
+      <p><span id="month-result">--</span> months</p>
+      <p><span id="day-result">--</span> days</p>
+    </div>
+
+  </section>
+  
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

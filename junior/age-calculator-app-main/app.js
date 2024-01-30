@@ -1,0 +1,121 @@
+// Obtem referências para os elementos de entrada e exibição
+const inputDay = document.querySelector("#day");
+const inputMonth = document.querySelector("#month");
+const inputYear = document.querySelector("#year");
+const resultDay = document.querySelector("#day-result");
+const resultMonth = document.querySelector("#month-result");
+const resultYear = document.querySelector("#year-result");
+
+// Define o comprimento máximo para os campos de entrada
+inputDay.maxLength = 2;
+inputMonth.maxLength = 2;
+inputYear.maxLength = 4;
+
+// Função para calcular a idade
+function calculate() {
+
+    // Armazena um valor boolean, para validar as informações
+    var isValid = true
+
+    // Obtem os valores das entradas como números inteiros
+    var inputDayValue = parseInt(inputDay.value, 10);
+    var inputMonthValue = parseInt(inputMonth.value, 10);
+    var inputYearValue = parseInt(inputYear.value, 10);
+
+    // Verifica se os valores são números
+    if (isNaN(inputDayValue) || isNaN(inputMonthValue) || isNaN(inputYearValue)) {
+        alert("Por favor, insira valores numéricos para dia, mês e ano.");
+        isValid = false;
+    }
+
+    // Chama uma função para obter o ultimo dia de um mês
+    maxDay = lastDay(inputYearValue, inputMonthValue);
+
+    // Verifica se o dia está dentro do limite do mês informado
+    if (inputDayValue > maxDay) {       
+        errorStyle(inputDay, 'Must be a valid date')
+        isValid = false;
+    }
+    
+    // Verifica se o dia está dentro do intervalo correto
+    if (inputDayValue < 1 || inputDayValue > 31) {
+        errorStyle(inputDay, 'Must be a valid day')
+        isValid = false;
+    }
+
+    // Verifica se o mês está dentro do intervalo correto
+    if (inputMonthValue < 1 || inputMonthValue > 12) {
+        errorStyle(inputMonth, 'Must be a valid month')
+        isValid = false;
+    }
+
+    // Obtendo referências para o ano, mês e dia atual
+    var dataAtual = new Date();
+    var year = dataAtual.getFullYear();
+    var month = dataAtual.getMonth() + 1;
+    var day = dataAtual.getDate();
+
+    // Verifica se o ano não esta no futuro, ou 100 anos no passado
+    if (inputYearValue < year - 100 || inputYearValue > year) {
+        errorStyle(inputYear, 'Must be in the past')
+        isValid = false;
+    }
+
+    // Verifica se o dia inserido é maior que o dia atual
+    if ((day - inputDayValue) <= 0) {
+        // Se for o caso, ajusta o valor do mês e do dia
+        inputMonthValue += 1;
+        inputDayValue = (day - inputDayValue) + lastDay(year, (inputMonthValue - 2));
+    } else {
+        // Se o dia inserido for menor que o dia atual, calcula a diferença normalmente
+        inputDayValue = day - inputDayValue;
+    }
+
+    // Verifica se o mês inserido é maior que o mês atual
+    if ((month - inputMonthValue) <= 0) {
+        // Se for o caso, ajusta o valor do ano e do mês
+        inputYearValue += 1;
+        inputMonthValue = (month - inputMonthValue) + 12;
+    } else {
+        // Se o mês inserido for menor que o mês atual, calcula a diferença normalmente
+        inputMonthValue = month - inputMonthValue;
+    }
+
+    if (isValid) {
+        //Atribui os resultados para serem exibidos nos elementos HTML
+        resultYear.textContent = year - inputYearValue;
+        resultMonth.textContent = inputMonthValue;
+        resultDay.textContent = inputDayValue;
+    }
+    
+    return;
+}
+
+
+// Função para verificar qual o ultimo dia de determinado mês
+function lastDay(ano, mes) {
+    // Verifica se o mês informado é negativo, para resetar ele
+    if(mes < 0) {
+        // se for o caso, ele pega um ano inteiro e soma ao negativo
+        mes = 12 - mes;
+    }
+    return new Date(ano, mes, 0).getDate();
+}
+
+function errorStyle(inputElement, msg) {
+
+    removeStyle(inputElement);
+
+    var errorElement = document.createElement("p");
+    errorElement.classList.add("msg-error");
+    errorElement.textContent = msg;
+    inputElement.parentNode.appendChild(errorElement);
+}
+
+function removeStyle(inputElement) {
+    var errorElement = inputElement.parentNode.querySelector(".msg-error");
+
+    if (errorElement) {
+        inputElement.parentNode.removeChild(errorElement);
+    }
+}

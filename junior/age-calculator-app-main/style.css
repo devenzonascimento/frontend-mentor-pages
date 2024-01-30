@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+
+/*
+font-family: 'Poppins', sans-serif;
+*/
+
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0px solid black;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    color: var(--Off-black);
+}
+
+/*Ajuste nas cores*/
+
+body {
+    background-color: var(--Off-white);
+}
+
+section {
+    background-color: white;
+    border-radius: 30px;
+    border-bottom-right-radius: 30%;
+}
+
+label {
+    color: var(--Smokey-grey);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0.2em;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid var(--Light-grey);
+    font-size: 32px;
+    font-weight: 800;
+}
+
+input:hover {
+    border-color: var(--Purple);
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--Smokey-grey);
+}
+
+.msg-error {
+    color: var(--Light-red);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.line {
+    background-color: var(--Light-grey);
+}
+
+button {
+    background-color: var(--Purple);
+    border-radius: 50%;
+}
+
+button:hover {
+    background-color: var(--Off-black);
+    cursor: pointer;
+}
+
+/*Formatação*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    min-height: 700px;
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+section .input-container {
+    max-width: 600px;
+    display: flex;
+    gap: 30px;
+}
+
+.input-container .input-box {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 15px;
+}
+
+section .line {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    margin-top: 30px;
+}
+
+.line button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    padding: 25px;
+}
+
+section .results {
+
+}
+
+.results p {
+    font-size: 6em;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.results span {
+    color: var(--Purple);
+}
