@@ -15,16 +15,38 @@ inputYear.maxLength = 4;
 function calculate() {
 
     // Armazena um valor boolean, para validar as informações
-    var isValid = true
-
+    var isValid = true;
+    
     // Obtem os valores das entradas como números inteiros
     var inputDayValue = parseInt(inputDay.value, 10);
     var inputMonthValue = parseInt(inputMonth.value, 10);
     var inputYearValue = parseInt(inputYear.value, 10);
 
-    // Verifica se os valores são números
-    if (isNaN(inputDayValue) || isNaN(inputMonthValue) || isNaN(inputYearValue)) {
-        alert("Por favor, insira valores numéricos para dia, mês e ano.");
+    // Remove todos os estilos de erros caso existam
+    removeStyle(inputDay);
+    removeStyle(inputMonth);
+    removeStyle(inputYear);
+
+    // Verifica se algum campo está vazio e se ele é um numero
+    if (inputDay.value == "") {
+        errorStyle(inputDay, "This field is required");
+        isValid = false;
+    } else if (isNaN(inputDay.value)) {
+        errorStyle(inputDay, "This is not a number");
+        isValid = false;
+    }
+    if (inputMonth.value == "") {
+        errorStyle(inputMonth, "This field is required");
+        isValid = false;
+    } else if (isNaN(inputMonth.value)) {
+        errorStyle(inputMonth, "This is not a number");
+        isValid = false;
+    }
+    if (inputYear.value == "") {
+        errorStyle(inputYear, "This field is required");
+        isValid = false;
+    } else if (isNaN(inputYear.value)) {
+        errorStyle(inputYear, "This is not a number");
         isValid = false;
     }
 
@@ -33,19 +55,19 @@ function calculate() {
 
     // Verifica se o dia está dentro do limite do mês informado
     if (inputDayValue > maxDay) {       
-        errorStyle(inputDay, 'Must be a valid date')
+        errorStyle(inputDay, 'Must be a valid date');
         isValid = false;
     }
-    
+
     // Verifica se o dia está dentro do intervalo correto
     if (inputDayValue < 1 || inputDayValue > 31) {
-        errorStyle(inputDay, 'Must be a valid day')
+        errorStyle(inputDay, 'Must be a valid day');
         isValid = false;
     }
 
     // Verifica se o mês está dentro do intervalo correto
     if (inputMonthValue < 1 || inputMonthValue > 12) {
-        errorStyle(inputMonth, 'Must be a valid month')
+        errorStyle(inputMonth, 'Must be a valid month');
         isValid = false;
     }
 
@@ -56,8 +78,8 @@ function calculate() {
     var day = dataAtual.getDate();
 
     // Verifica se o ano não esta no futuro, ou 100 anos no passado
-    if (inputYearValue < year - 100 || inputYearValue > year) {
-        errorStyle(inputYear, 'Must be in the past')
+    if (inputYearValue > year) {
+        errorStyle(inputYear, 'Must be in the past');
         isValid = false;
     }
 
@@ -86,6 +108,7 @@ function calculate() {
         resultYear.textContent = year - inputYearValue;
         resultMonth.textContent = inputMonthValue;
         resultDay.textContent = inputDayValue;
+        removeAllStyles();
     }
     
     return;
@@ -103,9 +126,17 @@ function lastDay(ano, mes) {
 }
 
 function errorStyle(inputElement, msg) {
-
+    // Chama uma função para remover todos os estilos de erro
     removeStyle(inputElement);
+    
+    // Define a cor da borda do input como vermelho
+    inputElement.style.border = "1px solid hsl(0, 100%, 67%)";
 
+    // Declara o label e defini a cor do texto como vermelho
+    var label = inputElement.parentNode.querySelector("label");
+    label.style.color = "hsl(0, 100%, 67%)";
+
+    // Cria um Elemento HTML de parágrafo
     var errorElement = document.createElement("p");
     errorElement.classList.add("msg-error");
     errorElement.textContent = msg;
@@ -113,9 +144,29 @@ function errorStyle(inputElement, msg) {
 }
 
 function removeStyle(inputElement) {
-    var errorElement = inputElement.parentNode.querySelector(".msg-error");
+    inputElement.style.border = "";
+    
+    var labelElement = inputElement.parentNode.querySelector("label");
+    labelElement.style.color = "";
 
+    var errorElement = inputElement.parentNode.querySelector(".msg-error");
     if (errorElement) {
-        inputElement.parentNode.removeChild(errorElement);
+        errorElement.remove();
+    }
+}
+
+function removeAllStyles() {
+    var label = document.querySelectorAll("label");
+    var input = document.querySelectorAll("input");
+    var error = document.querySelectorAll(".msg-error");
+    for(var i = 0; i < 3; i++) {
+        
+
+        label[i].style.color = "";
+        input[i].style.border = "";
+
+        if (error[i]) {
+            error[i].remove();
+        }
     }
 }
