@@ -144,28 +144,36 @@ function errorStyle(inputElement, msg) {
 }
 
 function removeStyle(inputElement) {
-    inputElement.style.border = "";
-    
-    var labelElement = inputElement.parentNode.querySelector("label");
-    labelElement.style.color = "";
-
+    // Obtem referências para os elementos
     var errorElement = inputElement.parentNode.querySelector(".msg-error");
+    var labelElement = inputElement.parentNode.querySelector("label");
+
+    // Remove os estilos dos elementos
+    labelElement.style.color = "";
+    inputElement.style.border = "";
+
+    // Verifica se existe um elemento "error"
     if (errorElement) {
+        // Remove o elemento do documento HTML
         errorElement.remove();
     }
 }
 
 function removeAllStyles() {
+    // Obtem referências para os elementos
     var label = document.querySelectorAll("label");
     var input = document.querySelectorAll("input");
     var error = document.querySelectorAll(".msg-error");
-    for(var i = 0; i < 3; i++) {
-        
 
+    // Faz um loop por todos os elementos
+    for(var i = 0; i < 3; i++) {
+        // Remove os estilos dos elementos
         label[i].style.color = "";
         input[i].style.border = "";
 
+        // Verifica se existe um elemento "error"
         if (error[i]) {
+            // Remove o elemento do documento HTML
             error[i].remove();
         }
     }
