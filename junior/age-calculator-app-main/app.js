@@ -84,7 +84,7 @@ function calculate() {
     }
 
     // Verifica se o dia inserido é maior que o dia atual
-    if ((day - inputDayValue) <= 0) {
+    if ((day - inputDayValue) < 0) {
         // Se for o caso, ajusta o valor do mês e do dia
         inputMonthValue += 1;
         inputDayValue = (day - inputDayValue) + lastDay(year, (inputMonthValue - 2));
@@ -94,7 +94,7 @@ function calculate() {
     }
 
     // Verifica se o mês inserido é maior que o mês atual
-    if ((month - inputMonthValue) <= 0) {
+    if ((month - inputMonthValue) < 0) {
         // Se for o caso, ajusta o valor do ano e do mês
         inputYearValue += 1;
         inputMonthValue = (month - inputMonthValue) + 12;
