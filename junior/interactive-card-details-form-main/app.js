@@ -1,16 +1,16 @@
+var isValid;
 var inputCardName = document.querySelector("#input-name");
 var inputCardNumber = document.querySelector("#input-number");
 var inputCardMonth = document.querySelector("#input-month");
 var inputCardYear = document.querySelector("#input-year");
 var inputCardCVC = document.querySelector("#input-cvc");
 
-var isValid
-
 inputCardNumber.maxLength = 19;
 inputCardMonth.maxLength = 2;
 inputCardYear.maxLength = 2;
 inputCardCVC.maxLength = 3;
 
+//Mascara para Card Number
 inputCardNumber.addEventListener('keypress', function(event) {
     if (inputCardNumber.value.length == 4 || inputCardNumber.value.length == 9 || inputCardNumber.value.length == 14) {
         inputCardNumber.value += " ";
@@ -18,9 +18,9 @@ inputCardNumber.addEventListener('keypress', function(event) {
 })
 
 document.getElementById('form-interface').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar o envio padrão do formulário
+    event.preventDefault();
 
-    cardValidate()
+    cardValidate();
 
     if (isValid) {
         document.getElementById('form-interface').style.display = "none";
@@ -31,7 +31,7 @@ document.getElementById('form-interface').addEventListener('submit', function(ev
 
 function cardValidate() {
 
-    isValid = true
+    isValid = true;
     
     var input = document.querySelectorAll("input");
 
@@ -74,7 +74,7 @@ function cardValidate() {
 
     showResults();
     
-    return
+    return;
 }
 
 function showResults() {
@@ -93,7 +93,7 @@ function showResults() {
         resultCardDate.textContent = inputCardMonth.value + "/" + inputCardYear.value;
     }
     if (inputCardCVC.value != "") {
-        resultCardCVC.textContent = inputCardCVC.value
+        resultCardCVC.textContent = inputCardCVC.value;
     }
 }
 
