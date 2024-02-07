@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Time tracking dashboard</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="menu-container">
+      <div class="profile-container">
+        <img src="images/image-jeremy.png" alt="image-jeremy.png" id="img-profile">
+        <div class="profile">
+          <p>Report for</p>
+          <span>Jeremy Robson</span>
+        </div>
+      </div>
+      
+      <button id="daily-button" onclick=" frequencyDashboard(this)">Daily</button>
+      <button id="weekly-button" onclick=" frequencyDashboard(this)">Weekly</button>
+      <button id="monthly-button" onclick=" frequencyDashboard(this)">Monthly</button>
+    </div>
+    
+
+    <div class="card-container" id="card-work">
+      
+      <img src="images/icon-work.svg" alt="">
+
+      <div class="info-container">
+
+        <img src="images/icon-ellipsis.svg" alt="">
+
+        <h1>Work</h1>
+        <span class="current">5</span>
+        <p><span class="previous-type">Previous</span> - <span class="previous">7</span></p>
+      </div>
+    </div>
+
+    <div class="card-container" id="card-play">
+      
+      <img src="images/icon-play.svg" alt="">
+
+      <div class="info-container">
+
+        <img src="images/icon-ellipsis.svg" alt="">
+
+        <h1>Play</h1>
+        <span class="current">1</span>
+        <p><span class="previous-type">Previous</span> - <span class="previous">2</span></p>
+      </div>
+    </div>
+
+    <div class="card-container" id="card-study">
+      
+      <img src="images/icon-study.svg" alt="">
+
+      <div class="info-container">
+
+        <img src="images/icon-ellipsis.svg" alt="">
+
+        <h1>Study</h1>
+        <span class="current">0</span>
+        <p><span class="previous-type">Previous</span> - <span class="previous">1</span></p>
+      </div>
+    </div>
+
+    <div class="card-container" id="card-exercise">
+      
+      <img src="images/icon-exercise.svg" alt="">
+
+      <div class="info-container">
+
+        <img src="images/icon-ellipsis.svg" alt="">
+
+        <h1>Exercise</h1>
+        <span class="current">1</span>
+        <p><span class="previous-type">Previous</span> - <span class="previous">1</span></p>
+      </div>
+    </div>
+
+    <div class="card-container" id="card-social">
+      
+      <img src="images/icon-social.svg" alt="">
+
+      <div class="info-container">
+
+        <img src="images/icon-ellipsis.svg" alt="">
+
+        <h1>Social</h1>
+        <span class="current">1</span>
+        <p><span class="previous-type">Previous</span> - <span class="previous">3</span></p>
+      </div>
+    </div>
+    
+    <div class="card-container" id="card-selfcare">
+      
+      <img src="images/icon-self-care.svg" alt="">
+
+      <div class="info-container">
+
+        <img src="images/icon-ellipsis.svg" alt="">
+
+        <h1>Self Care</h1>
+        <span class="current">0</span>
+        <p><span class="previous-type">Previous</span> - <span class="previous">1</span></p>
+      </div>
+    </div>
+
+  </div>  
+
+  
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
