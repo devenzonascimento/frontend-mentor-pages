@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Tip calculator app</title>
+
+</head>
+<body>
+  <img src="images/logo.svg" alt="">
+  <form class="container" id="bill-form">
+    <div class="form-container">
+      <div class="input-box">
+        <label for="bill">Bill</label>
+        <div class="input-container">
+          <input type="text" id="bill" placeholder="0">
+          <img src="images/icon-dollar.svg" alt="">
+        </div>
+      </div>
+      <div class="select-tip-box">
+        <label for="|">Select Tip %</label>
+        <div class="select-tip-container">
+          <button value="5%">5%</button>
+          <button value="10%">10%</button>
+          <button value="15%">15%</button>
+          <button value="25%">25%</button>
+          <button value="50%">50%</button>
+          <input type="text" placeholder="Custom" id="custom-tip">
+        </div>
+      </div>
+      <div class="input-box">
+        <label for="">Number of People</label>
+        <div class="input-container">
+          <input type="text" id="n-people" placeholder="0">
+          <img src="images/icon-person.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="results">
+      <div class="result-box">
+        <p>
+          <strong>Tip Amount</strong>
+          <br>
+          / person
+        </p>
+        <span id="tip-amount">$0.00</span>
+      </div>
+      <div class="result-box">
+        <p>
+          <strong>Total</strong>
+          <br>
+          / person
+        </p>
+        <span id="total">$0.00</span>
+      </div>
+      <input type="reset" value="Reset" id="reset-btn" disabled>
+    </div>
+  </form>
+  
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+  
+</body>
+</html>
