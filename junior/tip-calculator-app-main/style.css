@@ -68,6 +68,11 @@ button {
     border-radius: 0.2em;
 }
 
+button.active {
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
 p {
     color: var(--Dark-grayish-cyan);
 }
@@ -174,7 +179,7 @@ span {
     }
     .select-tip-container button:hover {
         cursor: pointer;
-        background-color: hsl(172, 42%, 58%);
+        background-color: hsl(171, 43%, 75%);
         color: var(--Very-dark-cyan);
     }
 
