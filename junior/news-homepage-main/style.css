@@ -261,7 +261,7 @@ span {
 
 }
 
-@media only screen and (max-width: 1279px) {
+@media only screen and (max-width: 1279px) and (min-width: 1024px) {
     body {
         min-height: 100vh;
         display: flex;
@@ -375,6 +375,10 @@ span {
 
     .new-content h2 {
         font-size: 1.1em;
+    }
+
+    .new-content h2:hover {
+        color: var(--Soft-orange);
     }
 
     .new-content p {
