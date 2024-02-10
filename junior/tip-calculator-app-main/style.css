@@ -265,6 +265,10 @@ span {
         gap: 75px;
     }
 
+    body > img {
+        margin-top: 25px;
+    }
+
     .container {
         width: 100%;
         height: max-content;
