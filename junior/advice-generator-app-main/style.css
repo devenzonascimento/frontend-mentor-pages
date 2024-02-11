@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+/*
+font-family: 'Manrope', sans-serif;
+*/
+
+:root {
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0px solid black;
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+html {
+    font-family: 'Manrope', sans-serif;
+}
+
+/*Ajustes globais*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Dark-Blue);
+}
+
+.container {
+    position: relative;
+    height: 22em;
+    width: 38em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--Dark-Grayish-Blue);
+    border-radius: 1em;
+}
+
+.container h1 {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--Neon-Green);
+}
+
+.container p {
+    font-size: 2em;
+    text-align: center;
+    color: var(--Light-Cyan);
+}
+
+.container #dice-img {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5em;
+    border-radius: 50%;
+    background-color: var(--Neon-Green);
+}
+
+.container #dice-img img{
+    display: block;
+}
+
+.attribution {
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--Light-Cyan);
+    margin-top: 5em;
+}
+
+
+
+
+
