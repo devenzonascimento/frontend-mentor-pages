@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
-/*
-font-family: 'Manrope', sans-serif;
-*/
 
 :root {
     --Light-Cyan: hsl(193, 38%, 86%);
@@ -28,64 +25,130 @@ html {
     font-family: 'Manrope', sans-serif;
 }
 
-/*Ajustes globais*/
+@media only screen and (min-width: 1024px) {
+    
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--Dark-Blue);
+    }
+    
+    .container {
+        position: relative;
+        height: 22em;
+        width: 38em;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--Dark-Grayish-Blue);
+        border-radius: 1em;
+    }
+    
+    .container h1 {
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--Neon-Green);
+    }
+    
+    .container p {
+        font-size: 2em;
+        text-align: center;
+        color: var(--Light-Cyan);
+    }
+    
+    .container #dice-btn {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.8em;
+        border-radius: 50%;
+        background-color: var(--Neon-Green);
+    }
+    
+    .container #dice-btn:hover {
+        box-shadow: 0px 0px 20px 20px hsla(150, 100%, 66%, 0.226);
+    }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--Dark-Blue);
+    .container #dice-btn img{
+        display: block;
+    }
+    
+    .attribution {
+        font-size: 1.5em;
+        text-align: center;
+        color: var(--Light-Cyan);
+        margin-top: 5em;
+    }
 }
 
-.container {
-    position: relative;
-    height: 22em;
-    width: 38em;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--Dark-Grayish-Blue);
-    border-radius: 1em;
-}
+@media only screen and (max-width: 768px) {
 
-.container h1 {
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--Neon-Green);
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--Dark-Blue);
+        margin: 1em;
+    }
+    
+    .container {
+        position: relative;
+        height: 20em;
+        width: 100%;
+        padding: 2.5em 1.5em;
+        margin: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2em;
+        background-color: var(--Dark-Grayish-Blue);
+        border-radius: 1em;
+    }
+    
+    .container h1 {
+        font-size: 0.7em;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--Neon-Green);
+    }
+    
+    .container p {
+        font-size: 1.5em;
+        text-align: center;
+        color: var(--Light-Cyan);
+    }
+    
+    .container #dice-btn {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.5em;
+        border-radius: 50%;
+        background-color: var(--Neon-Green);
+    }
+    
+    .container #dice-btn img{
+        display: block;
+    }
+    
+    .attribution {
+        font-size: 0.9em;
+        text-align: center;
+        color: var(--Light-Cyan);
+        margin-top: 5em;
+    }
 }
-
-.container p {
-    font-size: 2em;
-    text-align: center;
-    color: var(--Light-Cyan);
-}
-
-.container #dice-img {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1.5em;
-    border-radius: 50%;
-    background-color: var(--Neon-Green);
-}
-
-.container #dice-img img{
-    display: block;
-}
-
-.attribution {
-    font-size: 1.5em;
-    text-align: center;
-    color: var(--Light-Cyan);
-    margin-top: 5em;
-}
-
 
 
 
