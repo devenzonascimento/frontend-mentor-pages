@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Interactive pricing component</title>
+
+</head>
+<body>
+
+  <header>
+    <h1>Simple, traffic-based pricing</h1>
+    <p>Sign-up for our 30-day trial. No credit card required.</p>
+    <img src="images/pattern-circles.svg" alt="">
+  </header>
+
+  <main class="container">
+    <div class="pricing-container">
+
+      <div class="pricing-box">
+        <p id="p-pageviews"><span id="pageviews">100K</span> Pageviews</p>
+        <p id="p-value"><span id="value">$16.00</span> /month</p>
+      </div>
+
+      <input type="range" name="" id="">
+
+      <div id="discount">
+        <span>Monthly Billing</span>
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="switch">
+          <span class="slider"></span>
+        </label>
+        <span>Yearly Billing <strong>25% discount</strong></span>
+      </div>
+
+    </div>
+
+    <div class="benefits-container">
+
+      <div class="benefits-box">
+        <p class="benefits">Unlimited websites</p>
+        <p class="benefits">100% data ownership</p>
+        <p class="benefits">Email reports</p>
+      </div>
+
+      <button>Start my trial</button>
+
+    </div>
+  </main>
+
+  <!--
+  - 10K pageviews / $8 per month
+  - 50K pageviews / $12 per month
+  - 100K pageviews / $16 per month
+  - 500k pageviews / $24 per month
+  - 1M pageviews / $36 per month
+  -->
+  
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/devenzonascimento">Enzo Nascimento</a>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
