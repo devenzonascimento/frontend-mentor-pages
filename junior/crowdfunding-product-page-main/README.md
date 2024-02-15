@@ -1,6 +1,6 @@
-# Frontend Mentor - Interactive pricing component
+# Frontend Mentor - Crowdfunding product page
 
-![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Crowdfunding product page coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
@@ -12,29 +12,20 @@ Thanks for checking out this front-end coding challenge.
 
 ## The challenge
 
-Your challenge is to build out this interactive pricing component and get it looking as close to the design as possible.
+Your challenge is to build out this crowdfunding product page and get it looking as close to the design as possible.
 
 You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
 Your users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Use the slider and toggle to see prices for different page view numbers (details provided below)
+- View the optimal layout depending on their device's screen size
+- See hover states for interactive elements
+- Make a selection of which pledge to make
+- See an updated progress bar and total money raised based on their pledge total after confirming a pledge
+- See the number of total backers increment by one after confirming a pledge
+- Toggle whether or not the product is bookmarked
 
 Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
-
-### Page view and pricing totals
-
-Here are the different page view ranges and the corresponding monthly price totals:
-
-- 10K pageviews / $8 per month
-- 50K pageviews / $12 per month
-- 100K pageviews / $16 per month
-- 500k pageviews / $24 per month
-- 1M pageviews / $36 per month
-
-If the visitor switches the toggle to yearly billing, a 25% discount should be applied to all prices.
 
 ## Where to find everything
 

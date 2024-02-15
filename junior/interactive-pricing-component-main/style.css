@@ -1,0 +1,681 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+:root {
+    --Soft-Cyan: hsl(174, 77%, 80%);
+    --Strong-Cyan: hsl(174, 86%, 45%);
+    --Light-Grayish-Red: hsl(14, 92%, 95%);
+    --Light-Red: hsl(15, 100%, 70%);
+    --Pale-Blue: hsl(226, 100%, 87%);
+    --Very-Pale-Blue: hsl(230, 100%, 99%);
+    --Light-Grayish-Blue: hsl(224, 65%, 95%);
+    --Grayish-Blue: hsl(225, 20%, 60%);
+    --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+
+    --value: 28%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0px solid black;
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+html {
+    font-family: 'Manrope', sans-serif;
+    color: var(--Grayish-Blue);
+}
+
+/*Ajustes Gerais*/
+
+body {
+    background-color: var(--Very-Pale-Blue);
+    background-image: url(images/bg-pattern.svg);
+}
+
+.container {
+    gap: 0.2em;
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: var(--Dark-Desaturated-Blue);
+}
+
+.pricing-container {
+    background-color: white;
+}
+
+#p-pageviews {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+}
+
+#value {
+    font-weight: 800;
+    color: var(--Dark-Desaturated-Blue);
+}
+
+#discount strong {
+    color: var(--Light-Red);
+    background-color: var(--Light-Grayish-Red);
+}
+
+.benefits-container {
+    background-color: white;
+}
+
+.benefits-container button{
+    color: var(--Pale-Blue);
+    background-color: var(--Dark-Desaturated-Blue);
+}
+
+.attribution {
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6em;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+
+    header {
+        position: relative;
+        margin-top: 5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+
+
+    .container {
+        height: max-content;
+        width: 35em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+
+    .container .pricing-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 3em 2.5em;
+    }
+
+    .pricing-container .pricing-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 1em;
+        align-items: center;
+    }
+
+    #p-value {
+        justify-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    #value {
+        font-size: 2.7em;
+    }
+
+    #range-input {
+        grid-column: 1 /3;
+    }
+
+    /*Customizações do input-range*/
+    #range-input {
+        appearance: none;
+        width: 100%;
+        height: 10px;
+        background-color: var(--Light-Grayish-Blue);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #range-input::-moz-range-progress {
+        appearance: none;
+        background-color: var(--Strong-Cyan);
+        color: var(--Strong-Cyan);
+        width: 100%;
+        height: 10px;
+
+    }
+    #range-input::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(to right, hsl(174, 86%, 75%) 0%, hsl(174, 86%, 75%) var(--value), #e0e0e0 var(--value), #e0e0e0 100%);
+        border-radius: 5px;
+    }
+    #range-input::-webkit-slider-thumb {
+        background: var(--Strong-Cyan) url('images/icon-slider.svg') no-repeat center center;
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        margin-top: -15px;
+        border-radius: 50%;
+        box-shadow: 0 15px 15px 10px hsla(174, 86%, 45%, 0.25);
+        cursor: pointer;
+    }
+    #range-input:active::-webkit-slider-thumb {
+        background-color: hsl(174, 88%, 27%); /* Cor quando está sendo arrastado */
+        cursor: grab;
+    }
+
+    #discount {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5em;
+        padding-right: 1em;
+        font-size: 0.8em;
+    }
+
+    /*Customizações do input-checkbox (Switch)*/
+    #discount .switch {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 40px;
+        height: 20px;
+        padding: 3px;
+        border-radius: 1em;
+        background-color: hsl(223, 50%, 87%);
+        transition: all 0.4s ease-in-out;
+    }
+    #checkbox {
+        display: none;
+    }
+    .slider-ball {
+        content: "";
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+    }
+    #checkbox:checked ~ .switch {
+        background-color: var(--Strong-Cyan);
+    } 
+    #checkbox:checked ~ .switch .slider-ball {
+        transform: translateX(19px);
+    } 
+
+
+    #discount strong {
+        margin-left: 0.5em;
+        padding: 2px 4px;
+        border-radius: 8px;
+        font-size: 0.75em;
+    }
+
+    #discount strong::after {
+        content: " discount";
+    }
+
+
+
+    .container .benefits-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em 2.5em;
+    }
+
+    .benefits-container .benefits-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .benefits-box p {
+        font-size: 0.8em;
+    }
+
+    .benefits-box p::before {
+        content: url(images/icon-check.svg);
+        margin-right: 0.7em;
+    }
+
+    .benefits-container button {
+        padding: 12px 50px;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.9em;
+        border-radius: 30px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6em;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    header {
+        position: relative;
+        margin-top: 5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+
+
+    .container {
+        height: max-content;
+        width: 35em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+
+    .container .pricing-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 3em 2.5em;
+    }
+
+    .pricing-container .pricing-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 1em;
+        align-items: center;
+    }
+
+    #p-value {
+        justify-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    #value {
+        font-size: 2.7em;
+    }
+
+    #range-input {
+        grid-column: 1 /3;
+    }
+
+    /*Customizações do input-range*/
+    #range-input {
+        appearance: none;
+        width: 100%;
+        height: 10px;
+        background-color: var(--Light-Grayish-Blue);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #range-input::-moz-range-progress {
+        appearance: none;
+        background-color: var(--Strong-Cyan);
+        color: var(--Strong-Cyan);
+        width: 100%;
+        height: 10px;
+
+    }
+    #range-input::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(to right, hsl(174, 86%, 75%) 0%, hsl(174, 86%, 75%) var(--value), #e0e0e0 var(--value), #e0e0e0 100%);
+        border-radius: 5px;
+    }
+    #range-input::-webkit-slider-thumb {
+        background: var(--Strong-Cyan) url('images/icon-slider.svg') no-repeat center center;
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        margin-top: -15px;
+        border-radius: 50%;
+        box-shadow: 0 15px 15px 10px hsla(174, 86%, 45%, 0.25);
+        cursor: pointer;
+    }
+    #range-input::-webkit-slider-thumb:hover {
+        background-color: hsl(174, 86%, 65%);
+    } 
+    #range-input:active::-webkit-slider-thumb {
+        background-color: hsl(174, 88%, 27%); /* Cor quando está sendo arrastado */
+        cursor: grab;
+    }
+
+    #discount {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5em;
+        padding-right: 1em;
+        font-size: 0.8em;
+    }
+
+    /*Customizações do input-checkbox (Switch)*/
+    #discount .switch {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 40px;
+        height: 20px;
+        padding: 3px;
+        border-radius: 1em;
+        background-color: hsl(223, 50%, 87%);
+        transition: all 0.4s ease-in-out;
+    }
+    .switch:hover {
+        background-color: var(--Strong-Cyan);
+        cursor: pointer;
+    }
+    #checkbox {
+        display: none;
+    }
+    .slider-ball {
+        content: "";
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+    }
+    #checkbox:checked ~ .switch {
+        background-color: var(--Strong-Cyan);
+    } 
+    #checkbox:checked ~ .switch .slider-ball {
+        transform: translateX(19px);
+    } 
+
+    #discount strong {
+        margin-left: 0.5em;
+        padding: 2px 4px;
+        border-radius: 8px;
+        font-size: 0.75em;
+    }
+
+    #discount strong::after {
+        content: " discount";
+    }
+
+
+
+    .container .benefits-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em 2.5em;
+    }
+
+    .benefits-container .benefits-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .benefits-box p {
+        font-size: 0.8em;
+    }
+
+    .benefits-box p::before {
+        content: url(images/icon-check.svg);
+        margin-right: 0.7em;
+    }
+
+    .benefits-container button {
+        padding: 12px 50px;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.9em;
+        border-radius: 30px;
+    }
+
+    .benefits-container button:hover {
+        color: white;
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2.5em;
+        margin: 0 1.5em;
+        background-repeat: no-repeat;
+        background-size: 300%;
+    }
+
+    header {
+        position: relative;
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    header p {
+        font-size: 0.9em;
+        padding: 0 4em;
+    }
+
+    header img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+
+
+    .container {
+        height: max-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+
+    .container .pricing-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 1em;
+    }
+
+    .pricing-container .pricing-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        row-gap: 1em;
+    }
+
+    #p-pageviews {
+        font-size: 0.9em;
+    }
+
+    #p-value {
+        order: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    #value {
+        font-size: 2em;
+    }
+
+    /*Customizações do input-range*/
+    #range-input {
+        appearance: none;
+        width: 100%;
+        height: 10px;
+        background-color: var(--Light-Grayish-Blue);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #range-input::-moz-range-progress {
+        appearance: none;
+        background-color: var(--Strong-Cyan);
+        color: var(--Strong-Cyan);
+        width: 100%;
+        height: 10px;
+
+    }
+    #range-input::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(to right, hsl(174, 86%, 75%) 0%, hsl(174, 86%, 75%) var(--value), #e0e0e0 var(--value), #e0e0e0 100%);
+        border-radius: 5px;
+    }
+    #range-input::-webkit-slider-thumb {
+        background: var(--Strong-Cyan) url('images/icon-slider.svg') no-repeat center center;
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        margin-top: -15px;
+        border-radius: 50%;
+        box-shadow: 0 15px 15px 10px hsla(174, 86%, 45%, 0.25);
+        cursor: pointer;
+    }
+    #range-input:active::-webkit-slider-thumb {
+        background-color: hsl(174, 88%, 27%); /* Cor quando está sendo arrastado */
+        cursor: grab;
+    }
+
+    #discount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7em;
+        padding-right: 0em;
+        font-size: 0.85em;
+    }
+
+    /*Customizações do input-checkbox (Switch)*/
+    #discount .switch {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 50px;
+        height: 25px;
+        padding: 3px;
+        border-radius: 1em;
+        background-color: hsl(223, 50%, 87%);
+        transition: all 0.4s ease-in-out;
+    }
+    #checkbox {
+        display: none;
+    }
+    .slider-ball {
+        content: "";
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+    }
+    #checkbox:checked ~ .switch {
+        background-color: var(--Strong-Cyan);
+    } 
+    #checkbox:checked ~ .switch .slider-ball {
+        transform: translateX(24px);
+    } 
+
+    #discount strong {
+        margin-left: 0.5em;
+        padding: 2px 6px;
+        border-radius: 10px;
+        font-size: 0.75em;
+    }
+
+
+
+    .container .benefits-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        gap: 2em;
+        padding: 1em;
+    }
+
+    .benefits-container .benefits-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .benefits-box p {
+        font-size: 0.8em;
+    }
+
+    .benefits-box p::before {
+        content: url(images/icon-check.svg);
+        margin-right: 0.7em;
+    }
+
+    .benefits-container button {
+        padding: 12px 50px;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.9em;
+        border-radius: 30px;
+    }
+}
+
+

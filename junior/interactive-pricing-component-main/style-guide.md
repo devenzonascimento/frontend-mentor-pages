@@ -31,8 +31,6 @@ The designs were created to the following widths:
 - Soft Cyan (Full Slider Bar): hsl(174, 77%, 80%)
 - Strong Cyan (Slider Backround): hsl(174, 86%, 45%)
 
-- Light Grayish Blue (Toggle Background): hsl(223, 50%, 87%)
-
 
 ## Typography
 
