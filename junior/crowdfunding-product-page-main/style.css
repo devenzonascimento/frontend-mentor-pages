@@ -3,31 +3,267 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
 
 :root {
-    --Soft-Cyan: hsl(174, 77%, 80%);
-    --Strong-Cyan: hsl(174, 86%, 45%);
-    --Light-Grayish-Red: hsl(14, 92%, 95%);
-    --Light-Red: hsl(15, 100%, 70%);
-    --Pale-Blue: hsl(226, 100%, 87%);
-    --Very-Pale-Blue: hsl(230, 100%, 99%);
-    --Light-Grayish-Blue: hsl(224, 65%, 95%);
-    --Grayish-Blue: hsl(225, 20%, 60%);
-    --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
-
-    --value: 28%;
+    --Moderate-cyan: hsl(176, 50%, 47%);
+    --Dark-cyan: hsl(176, 72%, 28%);
+    --Dark-gray: hsl(0, 0%, 48%);
 }
 
 * {
+    font-family: 'Commissioner', sans-serif;
     margin: 0;
     padding: 0;
     outline: 0;
     appearance: 0;
-    border: 0px solid black;
+    border: 1px solid black;
     text-decoration: none;
     box-sizing: border-box;
     background-color: transparent;
 }
 
-html {
-    font-family: 'Commissioner', sans-serif;
-    color: var(--Grayish-Blue);
+body {
+    background: #f1efef url(images/image-hero-desktop.jpg) top center no-repeat;
+}
+
+img {
+    display: block;
+}
+
+p {
+    color: var(--Dark-gray);
+    line-height: 1.7em;
+}
+
+header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.head-container,
+.stats-container,
+.about-container {
+    background-color: white;
+    border-radius: 7px;
+}
+
+
+@media (min-width: 1024px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        height: max-content;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3em 10em;
+    }
+
+    header .icon-menu {
+        display: none;
+    }
+
+    header nav {
+        height: max-content;
+        width: max-content;
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+    }
+
+    nav a {
+        font-size: 1em;
+        color: white;
+    }
+
+
+    main  {
+        position: relative;
+        height: max-content;
+        width: 45em;
+        margin-top: 12em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+    }
+    
+    main #logo-mastercraft {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .head-container,
+    .stats-container,
+    .about-container {
+        width: 100%;
+        padding: 2.5em;
+    }
+    
+    .head-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        align-items: center;
+        justify-items: center;
+        gap: 1em;
+        padding-top: 3em;
+    }
+    
+    .head-container h1 {
+        grid-column: 1 / 3;
+    }
+    
+    .head-container p {
+        grid-column: 1 / 3;    
+    }
+
+    .head-container #back-btn {
+        justify-self: start;
+        font-size: 1em;
+        font-weight: 700;
+        color: white;
+        background-color: var(--Moderate-cyan);
+        margin-top: 1.5em;
+        padding: 1em 2em;
+        border-radius: 2em;
+    }
+
+    .head-container #bookmark-btn {
+        position: relative;
+        justify-self: end;
+        height: max-content;
+        width: max-content;
+        margin-top: 1.5em;
+        z-index: 0;
+    }
+
+    .head-container #bookmark-btn img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-10%, -50%);
+    }
+
+    .head-container #bookmark-btn::after {
+        content: "Bookmark";
+        font-size: 1.2em;
+        font-weight: 700;
+        color: var(--Dark-gray);
+        background-color: #f1efef;
+        padding: 1.1em 2em 1.1em 4em;
+        border-radius: 30px;
+    }
+
+
+    .stats-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .stats-container .stats-mini-container {
+        display: grid;
+        grid-template-columns: repeat(2, max-content) 150px repeat(2, max-content);
+        align-items: center;
+        gap: 2.5em;
+    }
+
+    .stats-mini-container p {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4em;
+        font-size: 1em;
+    }
+
+    .stats-mini-container p strong {
+        font-size: 2.2em;
+        color: black;
+
+    }
+
+    .stats-container .line {
+        height: 80%;
+        width: 2px;
+        background-color: #cfcfcf;
+    }
+
+    .stats-container .progress-bar {
+        height: 15px;
+        width: 100%;
+        background-color: #f1efef;
+        border-radius: 10px;
+    }
+
+    .progress-bar .bar {
+        height: 15px;
+        width: 80%;
+        background-color: var(--Moderate-cyan);
+        border-radius: 10px;
+    }
+
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .about-container .stand-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1em;
+    }
+
+    .stand-card-container .stand-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        align-items: center;
+        gap: 1.5em;
+        padding: 1.5em;
+        border: 2px solid #cfcfcf;
+        border-radius: 7px;
+    }
+
+    .stand-card h1 {
+
+    }
+
+    .stand-card .pledge-span {
+        justify-self: end;
+        font-weight: 500;
+        color: var(--Moderate-cyan);
+    }
+
+    .stand-card p {
+        grid-column: 1 / 3;
+    }
+
+    .stand-card .products-left {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    .stand-card .products-left .n-left {
+        font-size: 1.5em;
+    }
+
+    .stand-card button {
+        justify-self: end;
+        width: max-content;
+        padding: 0.7em 2em;
+        font-weight: 700;
+        color: white;
+        background-color: var(--Moderate-cyan);
+        border-radius: 30px;
+    }
+
 }
