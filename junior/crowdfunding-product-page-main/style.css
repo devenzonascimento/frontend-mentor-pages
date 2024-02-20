@@ -14,7 +14,7 @@
     padding: 0;
     outline: 0;
     appearance: 0;
-    border: 1px solid black;
+    border: 0px solid black;
     text-decoration: none;
     box-sizing: border-box;
     background-color: transparent;
@@ -22,6 +22,7 @@
 
 body {
     background: #f1efef url(images/image-hero-desktop.jpg) top center no-repeat;
+    background-size: contain;
 }
 
 img {
@@ -33,15 +34,35 @@ p {
     line-height: 1.7em;
 }
 
+strong {
+    color: black;
+}
+
 header {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 0.3), transparent);
 }
 
+nav a {
+    color: white;
+}
+
 .head-container,
 .stats-container,
-.about-container {
+.about-container,
+.selection-modal,
+.success-modal {
     background-color: white;
     border-radius: 7px;
+}
+
+.head-container #back-btn {
+    color: white;
+    background-color: var(--Moderate-cyan);
+}
+
+.pledge-span {
+    font-weight: 500;
+    color: var(--Moderate-cyan);
 }
 
 
@@ -76,7 +97,6 @@ header {
 
     nav a {
         font-size: 1em;
-        color: white;
     }
 
 
@@ -127,8 +147,6 @@ header {
         justify-self: start;
         font-size: 1em;
         font-weight: 700;
-        color: white;
-        background-color: var(--Moderate-cyan);
         margin-top: 1.5em;
         padding: 1em 2em;
         border-radius: 2em;
@@ -183,8 +201,6 @@ header {
 
     .stats-mini-container p strong {
         font-size: 2.2em;
-        color: black;
-
     }
 
     .stats-container .line {
@@ -218,6 +234,7 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin: 1em 0;
         gap: 1em;
     }
 
@@ -232,14 +249,9 @@ header {
         border-radius: 7px;
     }
 
-    .stand-card h1 {
-
-    }
 
     .stand-card .pledge-span {
         justify-self: end;
-        font-weight: 500;
-        color: var(--Moderate-cyan);
     }
 
     .stand-card p {
@@ -253,17 +265,126 @@ header {
     }
 
     .stand-card .products-left .n-left {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     .stand-card button {
         justify-self: end;
         width: max-content;
-        padding: 0.7em 2em;
+        padding: 0.9em 2.5em;
         font-weight: 700;
         color: white;
         background-color: var(--Moderate-cyan);
         border-radius: 30px;
     }
+    /*Out of Stock*/
+    .out-of-stock {
+        opacity: 0.4;
+    }
+    .out-of-stock button {
+        background-color: var(--Dark-gray);
+    }
 
+    /*Modal Seletion*/
+
+    .selection-modal {
+        width: 45em;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2.5em;
+    }
+
+    .selection-modal::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .selection-modal #icon-close-modal {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+
+    .selection-modal > h1 {
+        font-size: 1.5em;
+    }
+
+    .selection-modal > p {
+        margin: 1em 0 2em 0;
+    }
+
+
+    .selection-modal .stand-input-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 1em 0;
+        gap: 1em;
+    }
+
+    .stand-input-container .stand-input {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1.5em 1.5em 1.5em 4.5em;
+        border: 2px solid #cfcfcf;
+        border-radius: 7px;
+        overflow: hidden;
+    }
+
+    .stand-input.active {
+        border: 2px solid var(--Moderate-cyan);
+    }
+
+    .stand-input .radio-input {
+        position: absolute;
+        top: 1.8em;
+        left: 1.5em;
+        width: 24px;
+        height: 24px;
+    }
+
+    .stand-input .stand-pledge-box {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .stand-input  h1 {
+        font-size: 1em;
+    }
+
+    .stand-pledge-box .pledge-span {
+        font-size: 0.9em;
+        font-weight: 700;
+    }
+
+    .stand-input p {
+        font-size: 0.95em;
+    }
+
+    .stand-input .products-left {
+        position: absolute;
+        top: 1.5em;
+        right: 1.5em;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    .stand-input .products-left .n-left {
+        font-size: 1.1em;
+    }
+
+    .stand-input button {
+        justify-self: end;
+        width: max-content;
+        padding: 0.9em 2.5em;
+        font-weight: 700;
+        color: white;
+        background-color: var(--Moderate-cyan);
+        border-radius: 30px;
+    }
 }
