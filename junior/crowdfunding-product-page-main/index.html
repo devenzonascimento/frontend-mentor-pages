@@ -114,73 +114,81 @@
 
 
     <div class="stand-input-container">
-      <label for="no-reward-op" class="stand-input">
-        <input type="radio" name="radio-input" class="radio-input" id="no-reward-op">
-        <h1>Pledge with no reward</h1>
-        <p>
-          Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.
-        </p>
-      </label>
+      <div class="input-container">
+        <label for="no-reward-option" class="stand-input">
+          <input type="radio" name="radio-input" class="radio-input" id="no-reward-option">
+          <h1>Pledge with no reward</h1>
+          <p>
+            Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.
+          </p>
+        </label>
+      </div>
 
 
-      <label for="bamboo-op" class="stand-input">
-        <input type="radio" name="radio-input" class="radio-input" id="bamboo-op">
-        <div class="stand-pledge-box">
-          <h1>Bamboo Stand</h1>
-          <span class="pledge-span">Pledge $25 or more</span>
-        </div>
-        <p>
-          You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
-        </p>
-        <span class="products-left"><strong class="n-left">101</strong>left</span>
+      <div class="input-container">
+        <label for="bamboo-option" class="stand-input">
+          <input type="radio" name="radio-input" class="radio-input" id="bamboo-option">
+          <div class="stand-pledge-box">
+            <h1>Bamboo Stand</h1>
+            <span class="pledge-span">Pledge $25 or more</span>
+          </div>
+          <p>
+            You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
+          </p>
+          <span class="products-left"><strong class="n-left">101</strong>left</span>
+        </label>
         <!-- Selected pledge start -->
-        <dialog>
-          <span>Enter your pledge</span>
-          <input type="number" name="" id="" value="25">
-          <button>Continue</button>
-        </dialog>
-        <!-- Selected pledge end -->
-      </label>
-
-
-      <label for="black-op" class="stand-input">
-        <input type="radio" name="radio-input" class="radio-input" id="black-op">
-        <div class="stand-pledge-box">
-          <h1>Black Edition Stand</h1>
-          <span class="pledge-span">Pledge $75 or more</span>
+        <div class="pledge-input">
+          <label for="bamboo-pledge-input">Enter your pledge</label>
+          <input type="text" name="pledge" class="pledge-input-box" id="bamboo-pledge-input" placeholder="$ 25">
+          <button class="continue-btn">Continue</button>
         </div>
-        <p>
-          You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-        </p>
-        <span class="products-left"><strong class="n-left">64</strong>left</span>
+        <!-- Selected pledge end -->
+      </div>
+
+
+      <div class="input-container">
+        <label for="black-option" class="stand-input">
+          <input type="radio" name="radio-input" class="radio-input" id="black-option">
+          <div class="stand-pledge-box">
+            <h1>Black Edition Stand</h1>
+            <span class="pledge-span">Pledge $75 or more</span>
+          </div>
+          <p>
+            You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
+          </p>
+          <span class="products-left"><strong class="n-left">64</strong>left</span>
+        </label>
         <!-- Selected pledge start -->
-        <dialog>
-          <span>Enter your pledge</span>
-          <input type="number" name="" id="" value="75">
-          <button>Continue</button>
-        </dialog>
-        <!-- Selected pledge end -->
-      </label>
-
-
-      <label for="mahogany-op" class="stand-input out-of-stock">
-        <input type="radio" name="radio-input" class="radio-input" id="mahogany-op">
-        <div class="stand-pledge-box">
-          <h1>Mahogany Special Edition</h1>
-          <span class="pledge-span">Pledge $200 or more</span>
+        <div class="pledge-input">
+          <label for="black-pledge-input">Enter your pledge</label>
+          <input type="text" name="pledge" class="pledge-input-box" id="black-pledge-input" placeholder="$ 75">
+          <button class="continue-btn">Continue</button>
         </div>
-        <p>
-          You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-        </p>
-        <span class="products-left"><strong class="n-left">0</strong>left</span>
+        <!-- Selected pledge end -->
+      </div>
+
+
+      <div class="input-container">
+        <label for="mahogany-option" class="stand-input out-of-stock">
+          <input type="radio" name="radio-input" class="radio-input" id="mahogany-option">
+          <div class="stand-pledge-box">
+            <h1>Mahogany Special Edition</h1>
+            <span class="pledge-span">Pledge $200 or more</span>
+          </div>
+          <p>
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
+          </p>
+          <span class="products-left"><strong class="n-left">0</strong>left</span>
+        </label>
         <!-- Selected pledge  start -->
-        <dialog>
-          <span>Enter your pledge</span>
-          <input type="number" name="" id="" value="200">
-          <button>Continue</button>
-        </dialog>
+        <div class="pledge-input">
+          <label for="mahogany-pledge-input">Enter your pledge</label>
+          <input type="text" name="pledge" class="pledge-input-box" id="mahogany-pledge-input" placeholder="$ 200">
+          <button class="continue-btn">Continue</button>
+        </div>
         <!-- Selected pledge end -->
-      </label>
+      </div>
     </div>
 
   </dialog>

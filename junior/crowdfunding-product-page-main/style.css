@@ -55,7 +55,8 @@ nav a {
     border-radius: 7px;
 }
 
-.head-container #back-btn {
+.head-container #back-btn,
+.continue-btn {
     color: white;
     background-color: var(--Moderate-cyan);
 }
@@ -289,7 +290,7 @@ nav a {
 
     .selection-modal {
         width: 45em;
-        position: relative;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -323,19 +324,26 @@ nav a {
         gap: 1em;
     }
 
-    .stand-input-container .stand-input {
+    .stand-input-container .input-container {
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 1em;
-        padding: 1.5em 1.5em 1.5em 4.5em;
         border: 2px solid #cfcfcf;
         border-radius: 7px;
         overflow: hidden;
     }
 
-    .stand-input.active {
+    .input-container.active {
         border: 2px solid var(--Moderate-cyan);
+    }
+
+    .input-container .stand-input {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1.5em 1.5em 1.5em 4.5em;
+        overflow: hidden;
     }
 
     .stand-input .radio-input {
@@ -386,5 +394,38 @@ nav a {
         color: white;
         background-color: var(--Moderate-cyan);
         border-radius: 30px;
+    }
+
+    .input-container .pledge-input {
+        display: none;
+        grid-template-columns: 1fr repeat(2, max-content);
+        align-items: center;
+        gap: 1em;
+        padding: 1.5em;
+        border-top: 1px solid #cfcfcf;
+    }
+
+    .pledge-input label {
+        color: var(--Dark-gray);
+    }
+
+    .pledge-input .pledge-input-box {
+        width: 100px;
+        margin-left: auto;
+        padding: 0.9em 2em;
+        font-size: 0.9em;
+        font-weight: 700;
+        text-align: center;
+        border: 1px solid #cfcfcf;
+        border-radius: 2em;
+    }
+
+    .pledge-input .continue-btn {
+        position: relative;
+        font-size: 0.8em;
+        font-weight: 700;
+        margin-left: auto;
+        padding: 1em 2em;
+        border-radius: 2em;
     }
 }
