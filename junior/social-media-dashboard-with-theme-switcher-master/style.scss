@@ -1,0 +1,70 @@
+@import "variable.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-family: "Inter", sans-serif;
+}
+
+.light-theme {
+    --colorBG: hsl(0, 0%, 100%);
+    --colorTopBGPattern: hsl(225, 100%, 98%);
+    --colorCardBG: hsl(227, 47%, 96%);
+    --colorText1: hsl(228, 12%, 44%);
+    --colorText2: hsl(230, 17%, 14%);
+}
+  
+.dark-theme {
+    --colorBG: hsl(230, 17%, 14%);
+    --colorTopBGPattern: hsl(232, 19%, 15%);
+    --colorCardBG: hsl(228, 28%, 20%);
+    --colorText1: hsl(228, 34%, 66%);
+    --colorText2: hsl(0, 0%, 100%);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorBG), ;
+    color: var(--colorText2);
+    transition: background-color 0.3s, color 0.3s;
+
+    .container {
+        height: 90vh;
+        width: 60em;
+        display: flex;
+        flex-direction: column;
+
+        
+
+        &>h1 {
+            
+        }
+
+        &>span {
+            
+        }
+
+        &>button {
+
+        }
+        
+
+        .social-media-container {
+
+        }
+
+        &>h2 {
+
+        }
+
+        .overview-container {
+            
+        }
+    }
+}
