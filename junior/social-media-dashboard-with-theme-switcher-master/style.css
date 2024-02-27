@@ -33,7 +33,7 @@
     align-items: center;
     background: linear-gradient(to bottom, var(--colorTopBGPattern) 30%, var(--colorBG) 30%);
     color: var(--colorText1);
-    transition: all 1s, color 1s;
+    transition: all 0.7s, color 0.3s;
   }
   body .container {
     height: 90vh;
