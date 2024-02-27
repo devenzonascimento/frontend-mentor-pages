@@ -17,4 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('theme', theme);
     });
   });
+
+
+  fetch("data.json").then((response) => {
+    response.json().then(data => {
+      console.log(data)
+      const socialMediaStats = data.socialMediaData
+      const overviewStats = data.overviewData
+
+      console.log(socialMediaStats)
+      console.log(overviewStats)
+
+      
+      
+    })
+  })
   
