@@ -1,79 +1,111 @@
 {
     "socialMediaData": [
         {
-            "id": "facebook-wrapper",
             "platform": "Facebook",
+            "icon": "images/icon-facebook.svg",
             "username": "@nathanf",
             "followers": "1987",
             "followersText": "Followers",
-            "statsToday": "12 Today"
+            "statsToday": "12 Today",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
-            "id": "twitter-wrapper",
             "platform": "Twitter",
+            "icon": "images/icon-twitter.svg",
             "username": "@nathanf",
             "followers": "1044",
             "followersText": "Followers",
-            "statsToday": "99 Today"
+            "statsToday": "99 Today",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
-            "id": "instagram-wrapper",
             "platform": "Instagram",
+            "icon": "images/icon-instagram.svg",
             "username": "@realnathanf",
             "followers": "11k",
             "followersText": "Followers",
-            "statsToday": "1099 Today"
+            "statsToday": "1099 Today",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
-            "id": "youtube-wrapper",
             "platform": "YouTube",
+            "icon": "images/icon-youtube.svg",
             "username": "Nathan F.",
-            "subscribers": "8239",
-            "subscribersText": "Subscribers",
-            "statsToday": "144 Today"
+            "followers": "8239",
+            "followersText": "Subscribers",
+            "statsToday": "144 Today",
+            "comparison": "down",
+            "arrowIcon": "images/icon-down.svg"
         }
     ],
     
     "overviewData": [
         {
+            "icon": "images/icon-facebook.svg",
             "type": "Page Views",
             "number": "87",
-            "percentage": "3%"
+            "percentage": "3%",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
+            "icon": "images/icon-facebook.svg",
             "type": "Likes",
             "number": "52",
-            "percentage": "2%"
+            "percentage": "2%",
+            "comparison": "down",
+            "arrowIcon": "images/icon-down.svg"
         },
         {
+            "icon": "images/icon-instagram.svg",
             "type": "Likes",
             "number": "5462",
-            "percentage": "2257%"
+            "percentage": "2257%",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
+            "icon": "images/icon-instagram.svg",
             "type": "Profile Views",
             "number": "52k",
-            "percentage": "1375%"
+            "percentage": "1375%",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
+            "icon": "images/icon-twitter.svg",
             "type": "Retweets",
             "number": "117",
-            "percentage": "303%"
+            "percentage": "303%",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
+            "icon": "images/icon-twitter.svg",
             "type": "Likes",
             "number": "507",
-            "percentage": "553%"
+            "percentage": "553%",
+            "comparison": "up",
+            "arrowIcon": "images/icon-up.svg"
         },
         {
+            "icon": "images/icon-youtube.svg",
             "type": "Likes",
             "number": "107",
-            "percentage": "19%"
+            "percentage": "19%",
+            "comparison": "down",
+            "arrowIcon": "images/icon-down.svg"
         },
         {
+            "icon": "images/icon-youtube.svg",
             "type": "Total Views",
             "number": "1407",
-            "percentage": "12%"
+            "percentage": "12%",
+            "comparison": "down",
+            "arrowIcon": "images/icon-down.svg"
         }
     ]
 }
