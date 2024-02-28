@@ -1,4 +1,5 @@
 const selectionModal = document.querySelector(".selection-modal")
+const successModal = document.querySelector(".success-modal")
 
 const openButton = document.querySelector("#back-btn");
 openButton.addEventListener("click", () => {
@@ -13,7 +14,6 @@ closeButton.addEventListener("click", () => {
 const continueButtons = document.querySelectorAll(".continue-btn");
 continueButtons.forEach(button => {
     button.addEventListener("click", () => {
-        const successModal = document.querySelector(".success-modal")
         successModal.showModal()
         selectionModal.close()
     })
@@ -71,3 +71,29 @@ function removeBackdrop() {
         document.querySelector(".backdrop").remove()
     }
 }
+
+document.querySelector("#got-it-btn").addEventListener("click", () => {
+    successModal.close()
+})
+
+
+
+const selectButtons = document.querySelectorAll(".select-buttons")
+selectButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        selectionModal.showModal()
+
+        let inputs = document.querySelectorAll(".radio-input")[index + 1]
+        inputs.checked = true
+
+        removeInputStyles(document.querySelectorAll(".input-container"))
+        const inputContainer = document.querySelectorAll(".input-container")[index + 1];
+        inputContainer.classList.add("border-active")
+
+        hideInputContainers(document.querySelectorAll(".pledge-input"))
+        const pledgeInput = document.querySelectorAll(".pledge-input")[index];
+        pledgeInput.style.display = "grid"
+
+
+    })
+})

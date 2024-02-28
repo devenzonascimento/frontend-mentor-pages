@@ -1138,7 +1138,7 @@ button {
     .about-container {
         display: flex;
         flex-direction: column;
-        gap: 2em;
+        gap: 1em;
     }
 
     .about-container > h1 {
@@ -1146,7 +1146,7 @@ button {
     }
 
     .about-container > p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .about-container .stand-card-container {

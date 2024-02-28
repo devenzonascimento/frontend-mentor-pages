@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTheme === 'light-theme') {
       toggleButton.checked = true
     }
+    
   } else {
     body.classList.toggle('dark-theme');
   }
