@@ -1,12 +1,16 @@
 // Troca entre Light e Dark Mode
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
-  const toggleButton = document.getElementById('toggle-theme-button');
+  const toggleButton = document.getElementById('checkbox');
   const currentTheme = localStorage.getItem('theme');
 
   // Se há um tema armazenado, aplicá-lo
   if (currentTheme) {
     body.classList.add(currentTheme);
+    
+    if (currentTheme === 'light-theme') {
+      toggleButton.checked = true
+    }
   }
 
   toggleButton.addEventListener('click', () => {
@@ -22,15 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Obtem os dados do JSON para carregar o conteudo
 fetch("data.json").then((response) => {
   response.json().then(data => {
-    loadStats(data)
+    loadSocialMediaStats(data.socialMediaData)
+    loadOverviewStats(data.overviewData)
   })
 })
 
-function loadStats(data) {
-  loadSocialMediaStats(data.socialMediaData)
-  loadOverviewStats(data.overviewData)
-}
-
+// Carrega o conteudo da Social Media direto arquivo JSON
 function loadSocialMediaStats(stats) {
   // Elementos do Container: Social Media Dashboard
   const socialMediaCards = document.querySelectorAll(".social-media-card")
@@ -61,7 +62,7 @@ function loadSocialMediaStats(stats) {
     statsToday[i].insertBefore(arrowIcon, statsToday[i].firstChild)
   }
 }
-
+// Carrega o conteudo do Overview direto arquivo JSON
 function loadOverviewStats(stats) {
   // Elementos do Container: Social Media Dashboard
   const overviewCards = document.querySelectorAll(".overview-stats-card")
