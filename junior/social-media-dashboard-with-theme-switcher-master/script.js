@@ -27,12 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Obtem os dados do JSON para carregar o conteudo
-fetch("data.json").then((response) => {
-  response.json().then(data => {
+fecthData()
+async function fecthData() {
+  try {
+    const response = await fetch("data.json");
+    const data = await response.json();
+
     loadSocialMediaStats(data.socialMediaData)
     loadOverviewStats(data.overviewData)
-  })
-})
+  } 
+  catch (error) {
+    console.error("Erro: ", error);
+  }
+}
 
 // Carrega o conteudo da Social Media direto arquivo JSON
 function loadSocialMediaStats(stats) {
