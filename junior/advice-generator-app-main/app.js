@@ -1,19 +1,7 @@
-const button = document.querySelector("#dice-btn");
+document.querySelector("#dice-btn").addEventListener("click", async () => {
+    const response = await fetch("https://api.adviceslip.com/advice")
+    const data = await response.json()
 
-button.addEventListener("click", () => {
-    fetch("https://api.adviceslip.com/advice").then(response => {
-        response.json().then(data => {
-            const adviceID = document.querySelector("#advice-id");
-            const adviceText = document.querySelector("#advice-text");
-
-
-            adviceID.textContent = data.slip.id
-            adviceText.textContent = data.slip.advice
-        })
-    })
+    document.querySelector("#advice-id").textContent = data.slip.id
+    document.querySelector("#advice-text").textContent = data.slip.advice
 })
-
-
-
-
-
