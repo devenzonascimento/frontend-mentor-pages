@@ -1,0 +1,207 @@
+* {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    
+    background-color: lightgrey;
+
+    .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3em;
+        padding: 1em;
+
+        .settings-container {
+            height: 100px;
+            width: 90%;
+
+            nav {
+                display: flex;
+
+                ul {
+                    display: flex;
+                }
+            }
+        }
+
+        .simulator-container {
+            position: relative;
+            height: auto;
+            width: 90%;
+            display: grid;
+            grid-template-areas: 
+            "ram pc mar cir"
+            "ram mdr mdr decode"
+            "ram ula ula decode"
+            "ram acc acc decode"
+            ;
+            align-items: center;
+            justify-items: center;
+            column-gap: 1em;
+            padding: 2em;
+
+            .ram-container {
+                grid-area: ram;
+                height: 575px;
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+                padding: 1.5em;
+
+                h2 {
+                    font-size: 1.6em;
+                }
+
+                table {
+                    border-collapse: collapse;
+                    
+                    th {
+                        text-transform: uppercase;
+                        font-size: 1.3em;
+                        padding: 0.3em;
+                        text-align: start;
+                    }
+
+                    td {
+                        font-size: 1.2em;
+                        padding: 0.3em;
+                    }
+                }
+            }
+
+            .decode-container {
+                grid-area: decode;
+                bottom: 2em;
+                right: 2em;
+                height: max-content;
+                width: 275px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+                padding: 1.5em;
+
+                h2 {
+                    font-size: 1.6em;
+                }
+
+
+                table {
+                    border-collapse: collapse;
+                    
+                    
+                    th {
+                        text-transform: uppercase;
+                        font-size: 1.3em;
+                        padding: 0.3em;
+                        text-align: start;
+                    }
+
+                    td {
+                        font-size: 1.2em;
+                        padding: 0.3em;
+                    }
+                }
+            }
+
+            .registers {
+                overflow: hidden;
+
+                .register-name {
+                    width: 100%;
+                    padding: 0.5em;
+                    text-align: center;
+                }
+
+                .register-value {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+            }
+
+            @mixin register-box {
+                height: 80px;    
+                width: 160px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            
+            .pc-box {
+                grid-area: pc;
+                @include register-box();
+                top: 2em;
+                left: 21em;
+            }
+            .mar-box {
+                grid-area: mar;
+                @include register-box();
+                top: 2em;
+                left: 36em;
+            }
+            .mdr-box {
+                grid-area: mdr;
+                @include register-box();
+                top: 12em;
+                left: 28.5em;
+            }
+            .cir-box {
+                grid-area: cir;
+                @include register-box();
+                top: 2em;
+                right: 7em;
+            }
+            .acc-box {
+                grid-area: acc;
+                @include register-box();
+                top: 31em;
+                left: 28.5em;
+            }
+            .alu-box {
+                grid-area: ula;
+                height: 120px;
+                width: 120px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 20em;
+                left: 30em;
+            }
+
+            
+        }
+
+        .debbuging-container {
+            position: fixed;
+            top: 2em;
+            left: 2em;
+            display: flex;
+            gap: 1em;
+            padding: 1em;
+            border-radius: 10px;
+
+            span {
+                padding: 0.5em 1em;
+            }
+        }
+    }
+}
