@@ -24,7 +24,7 @@ let currentStep = 0;
 
 function executarProximoPasso(operationStep) {
     if (currentStep < operationStep.length) {
-        console.log("start")
+        console.log(operationStep[currentStep])
         operationStep[currentStep]();
         currentStep++
     }
@@ -36,8 +36,9 @@ let main = [
     () => mdr.textContent = memory[mar.textContent],
     () => cir.textContent = mdr.textContent,
     () => pc.textContent = toBinary(contador++),
+    () => console.log(cir.textContent),
     () => decode(cir.textContent),
-    () => console.log(main)
+    //() => console.log(main)
 ];
 
 function decode(cir) {
@@ -83,51 +84,57 @@ const search = [
     () => mdr.textContent = memory[mar.textContent],
     () => cir.textContent = mdr.textContent,
     () => pc.textContent = toBinary(contador++),
+    () => console.log(cir.textContent),
     () => decode(cir.textContent),
-    () => console.log(main)
+    //() => console.log(main)
 ];
 
 const addInstruction = [
+    () => console.log("Inicio ADD"),
     () => mar.textContent = operand.padStart(8, '0'),
     () => mdr.textContent = memory[mar.textContent],
     () => acc.textContent = toBinary(toDecimal(acc.textContent) + toDecimal(mdr.textContent)),
-    () => console.log("Executou ADD"),
+    () => console.log("Fim ADD"),
     () => instructionExecute(search)
 ];
 
 const subInstruction = [
+    () => console.log("Inicio SUB"),
     () => mar.textContent = operand.padStart(8, '0'),
     () => mdr.textContent = memory[mar.textContent],
     () => acc.textContent = toBinary(toDecimal(acc.textContent) - toDecimal(mdr.textContent)),
-    () => console.log("Executou SUB"),
+    () => console.log("Fim SUB"),
     () => instructionExecute(search)
 ];
 
 const storeInstruction = [
+    () => console.log("Inicio STORE"),
     () => mar.textContent = operand.padStart(8, '0'),
     () => memory[mar.textContent] = acc.textContent,
-    () => console.log(memory),
-    () => console.log("Executou STORE"),
+    () => console.log("Fim STORE"),
     () => instructionExecute(search)
 ]
 
 const loadInstruction = [
+    () => console.log("Inicio LOAD"),
     () => mar.textContent = operand.padStart(8, '0'),
     () => mdr.textContent = memory[mar.textContent],
     () => acc.textContent = mdr.textContent,
-    () => console.log("Executou LOAD"),
+    () => console.log("Fim LOAD"),
     () => instructionExecute(search)
 ]
 
 const inputInstruction = [
+    () => console.log("Inicio INPUT"),
     () => acc.textContent = toBinary(prompt("Informe um valor")),
-    () => console.log("Executou INPUT"),
+    () => console.log("Fim INPUT"),
     () => instructionExecute(search)
 ]
 
 const outputInstruction = [
+    () => console.log("Inicio OUTPUT"),
     () => alert(acc.textContent),
-    () => console.log("Executou OUTPUT"),
+    () => console.log("Fim OUTPUT"),
     () => instructionExecute(search)
 ]
 
