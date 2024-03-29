@@ -1,4 +1,4 @@
-# Olá eu sou Enzo Nascimento!
+# Olá eu sou o Enzo Nascimento!
 
 ### Este é o repositorio que eu uso para guardar a resolução dos desafios da [Frontend Mentor](https://www.frontendmentor.io/challenges)
 
