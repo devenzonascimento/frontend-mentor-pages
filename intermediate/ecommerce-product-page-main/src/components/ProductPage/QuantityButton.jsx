@@ -1,21 +1,11 @@
-import { useReducer } from "react";
+import { useContext } from "react";
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "increment":
-      return {
-        counter: state.counter + 1,
-      };
-    case "decrement":
-      if (state.counter > 0) return { counter: state.counter - 1 };
+import { ProductCartContext } from "../../context/ProductsCardContext";
 
-    default:
-      return state;
-  }
-};
 
 const QuantityButton = () => {
-  const [state, dispatch] = useReducer(reducer, { counter: 0 });
+
+  const {state, dispatch} = useContext(ProductCartContext)
 
   return (
     <button className="quantity-button">
