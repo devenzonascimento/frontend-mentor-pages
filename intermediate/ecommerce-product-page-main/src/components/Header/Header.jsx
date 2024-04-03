@@ -1,28 +1,18 @@
-import { useRef, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import "./style.scss";
 import ProductBasket from "./ProductBasket";
 
 import { ProductCartContext } from "../../context/ProductsCardContext";
 
 const Header = () => {
+  const { quantityProductsInCard, isOpenShopCart, handleOpenShopCart } =
+    useContext(ProductCartContext);
 
-  const { quantityProductsInCard } = useContext(ProductCartContext)
+  const [isOpenMenu, setIsOpenMenu] = useState("none");
 
-  const menuElement = useRef();
-  
-  const handleMenu = () => {
-    if (menuElement.current.style.display !== "flex") {
-      menuElement.current.style.display = "flex";
-    } else {
-      menuElement.current.style.display = "none";
-    }
+  const handleOpenMenu = () => {
+    isOpenMenu !== "flex" ? setIsOpenMenu("flex") : setIsOpenMenu("none");
   };
-
-  const [isOpen, setIsOpen] = useState(false)
-  
-  const handleOpenShopCart = () => {
-    isOpen ? setIsOpen(false) : setIsOpen(true)
-  }
 
   return (
     <header className="header-container">
@@ -30,10 +20,14 @@ const Header = () => {
         src="src/assets/icon-menu.svg"
         alt="menu icon"
         className="menu-icon"
-        onClick={handleMenu}
+        onClick={handleOpenMenu}
       />
       <img src="src/assets/logo.svg" alt="sneakers logo" className="logo" />
-      <button className="shop-cart-button" onClick={handleOpenShopCart} quantity={quantityProductsInCard || ""}>
+      <button
+        className="shop-cart-button"
+        onClick={() => handleOpenShopCart(true)}
+        quantity={quantityProductsInCard || ""}
+      >
         <img
           src="src/assets/icon-cart.svg"
           alt="cart icon"
@@ -45,12 +39,21 @@ const Header = () => {
         alt="avatar icon"
         className="avatar"
       />
-      <nav ref={menuElement}>
+      <nav
+        style={{ display: isOpenMenu }}
+        onClick={({ clientX, currentTarget }) => {
+          if (clientX > currentTarget.offsetWidth) {
+            isOpenMenu !== "flex"
+              ? setIsOpenMenu("flex")
+              : setIsOpenMenu("none")
+          }
+        }}
+      >
         <img
           src="src/assets/icon-close.svg"
           alt="menu icon"
           className="close-icon"
-          onClick={handleMenu}
+          onClick={handleOpenMenu}
         />
         <ul>
           <li>
@@ -70,7 +73,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <ProductBasket isOpen={isOpen} />
+      <ProductBasket isOpen={isOpenShopCart} />
     </header>
   );
 };

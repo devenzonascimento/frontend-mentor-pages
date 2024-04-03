@@ -1,22 +1,21 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 
 import { ProductCartContext } from "../../context/ProductsCardContext";
 
 const BasketItem = ({ basketProduct }) => {
-  const { handleRemoveProduct, getQuantityProductsInCard } =
-    useContext(ProductCartContext);
+  const { handleRemoveProduct, getQuantityProductsInCard } = useContext(ProductCartContext);
 
-  const deleteRef = useRef();
+  const { thumbnail, name, price, quantity } = basketProduct
 
   return (
     <li className="basket-item">
-      <img src={basketProduct.thumbnail} alt="" className="thumbnail" />
+      <img src={thumbnail} alt="" className="thumbnail" />
       <div className="product-details">
-        <span className="product-name">{basketProduct.name}</span>
+        <span className="product-name">{name}</span>
         <span className="product-values">
-          ${basketProduct.value.toFixed(2)} x {basketProduct.quantity}{" "}
+          ${price.toFixed(2)} x {quantity}{" "}
           <strong>
-            ${(basketProduct.value * basketProduct.quantity).toFixed(2)}
+            ${(price * quantity).toFixed(2)}
           </strong>
         </span>
       </div>
@@ -28,8 +27,8 @@ const BasketItem = ({ basketProduct }) => {
         onClick={({ target }) => {
           document.querySelectorAll(".delete-icon").forEach((button, index) => {
             if (target === button) {
-              getQuantityProductsInCard;
               handleRemoveProduct(index);
+              getQuantityProductsInCard();
             }
           })
         }}

@@ -1,40 +1,31 @@
-import { useReducer } from "react";
+import { useState } from "react";
 
-const productImages = [
-  "src/assets/image-product-1.jpg",
-  "src/assets/image-product-2.jpg",
-  "src/assets/image-product-3.jpg",
-  "src/assets/image-product-4.jpg",
-];
+const Carousel = ({ images }) => {
+  const [imageIndex, setImageIndex] = useState(0);
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "next":
-      return { index: (state.index + 1) % productImages.length };
-    case "previous":
-      return {
-        index: (state.index + productImages.length - 1) % productImages.length,
-      };
-    default:
-      return state;
-  }
-};
-
-const Carousel = () => {
-  const [state, dispatch] = useReducer(reducer, { index: 0 });
+  const handleNextImage = (direction) => {
+    switch (direction) {
+      case "next":
+        return setImageIndex((prev) => (prev + 1) % images.length);
+      case "prev":
+        return setImageIndex(
+          (prev) => (prev + images.length - 1) % images.length
+        );
+    }
+  };
 
   return (
     <div className="carousel-container">
-      <img src={productImages[state.index]} alt="" className="current-image" />
+      <img src={images[imageIndex]} alt="" className="current-image" />
       <button
         className="previous-icon carousel-icon"
-        onClick={() => dispatch({ type: "previous" })}
+        onClick={() => handleNextImage("prev")}
       >
         <img src="src/assets/icon-previous.svg" alt="" />
       </button>
       <button
         className="next-icon carousel-icon"
-        onClick={() => dispatch({ type: "next" })}
+        onClick={() => handleNextImage("next")}
       >
         <img src="src/assets/icon-next.svg" alt="" />
       </button>

@@ -6,22 +6,61 @@ const id = 1;
 
 const storeProducts = {
   1: {
-    image: "src/assets/image-product-1.jpg",
-    thumbnail: "src/assets/image-product-1-thumbnail.jpg",
+    images: [
+      "src/assets/image-product-1.jpg",
+      "src/assets/image-product-2.jpg",
+      "src/assets/image-product-3.jpg",
+      "src/assets/image-product-4.jpg",
+    ],
+    thumbnails: [
+      "src/assets/image-product-1-thumbnail.jpg",
+      "src/assets/image-product-2-thumbnail.jpg",
+      "src/assets/image-product-3-thumbnail.jpg",
+      "src/assets/image-product-4-thumbnail.jpg",
+    ],
+    brand: "Sneaker Company",
     name: "Fall Limited Edition Sneakers",
-    value: 125.0,
+    description: "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    price: 250.0,
+    discount: 50,
   },
   2: {
-    image: "src/assets/image-product-1.jpg",
-    thumbnail: "src/assets/image-product-1-thumbnail.jpg",
-    name: "Fall Limited Edition Sneakers 2 ",
-    value: 125.0,
+    images: [
+      "src/assets/image-product-3.jpg",
+      "src/assets/image-product-1.jpg",
+      "src/assets/image-product-4.jpg",
+      "src/assets/image-product-2.jpg",
+    ],
+    thumbnails: [
+      "src/assets/image-product-3-thumbnail.jpg",
+      "src/assets/image-product-1-thumbnail.jpg",
+      "src/assets/image-product-4-thumbnail.jpg",
+      "src/assets/image-product-2-thumbnail.jpg",
+    ],
+    brand: "Sneaker Company",
+    name: "Produto Teste 2 ",
+    description: "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    price: 550.0,
+    discount: 20,
   },
   3: {
-    image: "src/assets/image-product-1.jpg",
-    thumbnail: "src/assets/image-product-1-thumbnail.jpg",
-    name: "Fall Limited Edition Sneakers 3",
-    value: 125.0,
+    images: [
+      "src/assets/image-product-2.jpg",
+      "src/assets/image-product-3.jpg",
+      "src/assets/image-product-1.jpg",
+      "src/assets/image-product-4.jpg",
+    ],
+    thumbnails: [
+      "src/assets/image-product-2-thumbnail.jpg",
+      "src/assets/image-product-3-thumbnail.jpg",
+      "src/assets/image-product-1-thumbnail.jpg",
+      "src/assets/image-product-4-thumbnail.jpg",
+    ],
+    brand: "Sneaker Company",
+    name: "Produto Teste 3",
+    description: "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    price: 90.0,
+    discount: 15,
   },
 };
 
@@ -48,52 +87,65 @@ export const ProductCartProvider = ({ children }) => {
 
   const [quantityProductsInCard, setQuantityProductsInCard] = useState(0);
 
+  const [isOpenShopCart, setIsOpenShopCart] = useState(false);
+
+  const handleOpenShopCart = (isToggle) => {
+    if (isToggle) {
+      isOpenShopCart ? setIsOpenShopCart(false) : setIsOpenShopCart(true);
+    } else {
+      setIsOpenShopCart(true);
+    }
+  };
+
   const getQuantityProductsInCard = () => {
     let total = 0;
     for (let product of basketProducts) {
       total += product.quantity;
     }
-
     return setQuantityProductsInCard(total);
   };
 
   const handleAddToCart = () => {
-    for (let i = 0; i < basketProducts.length; i++) {
-      if (basketProducts[i].id == id) {
-        basketProducts[i].quantity = basketProducts[i].quantity + state.counter;
-        setBasketProducts([...basketProducts]);
-        return;
+
+    for (let product of basketProducts) {
+      if (product.id === id) {
+        product.quantity += state.counter;
+        return setBasketProducts([...basketProducts]);
       }
     }
+
     const newProduct = {
       requestID: requestID,
-      thumbnail: storeProducts[id].thumbnail,
+      thumbnail: storeProducts[id].thumbnails[0],
       id: id,
       name: storeProducts[id].name,
-      value: storeProducts[id].value,
+      price: storeProducts[id].price,
+      discount: storeProducts[id].discount,
       quantity: state.counter,
     };
     basketProducts.push(newProduct);
     setBasketProducts(basketProducts);
 
-    setRequestID((requestID) => requestID + 1);
+    setRequestID((prev) => prev += 1);
     return;
   };
 
   const handleRemoveProduct = (index) => {
-
-    basketProducts.splice(index, 1)
-    setBasketProducts([...basketProducts])
-  }
+    basketProducts.splice(index, 1);
+    setBasketProducts([...basketProducts]);
+  };
 
   return (
     <ProductCartContext.Provider
       value={{
+        storeProducts,
         basketProducts,
         handleAddToCart,
         handleRemoveProduct,
         getQuantityProductsInCard,
         quantityProductsInCard,
+        isOpenShopCart,
+        handleOpenShopCart,
         state,
         dispatch,
       }}
