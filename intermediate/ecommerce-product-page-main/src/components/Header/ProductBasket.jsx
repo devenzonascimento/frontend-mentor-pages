@@ -5,8 +5,7 @@ import { ProductCartContext } from "../../context/ProductsCardContext";
 import BasketItem from "./BasketItem";
 
 const ProductBasket = ({ isOpen }) => {
-
-  const { basketProducts } = useContext(ProductCartContext)
+  const { basketProducts } = useContext(ProductCartContext);
 
   return (
     <>
@@ -16,9 +15,16 @@ const ProductBasket = ({ isOpen }) => {
           <div className="basket">
             {basketProducts != "" ? (
               <>
-                {basketProducts.map((basketProduct) => {
-                  return <BasketItem key={basketProduct.id} basketProduct={basketProduct} />;
-                })}
+                <ul className="basket-list-items">
+                  {basketProducts.map((basketProduct) => {
+                    return (
+                      <BasketItem
+                        key={basketProduct.id}
+                        basketProduct={basketProduct}
+                      />
+                    );
+                  })}
+                </ul>
                 <button className="checkout-button">Checkout</button>
               </>
             ) : (
