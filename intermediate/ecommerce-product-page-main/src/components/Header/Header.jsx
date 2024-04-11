@@ -69,13 +69,13 @@ const Header = () => {
           alt="cart icon"
           className="cart-icon"
         />
+        <ProductBasket isOpen={isOpenShopCart} />
       </button>
       <img
         src="src/assets/image-avatar.png"
         alt="avatar icon"
         className="avatar"
       />
-      <ProductBasket isOpen={isOpenShopCart} />
     </header>
   );
 };
