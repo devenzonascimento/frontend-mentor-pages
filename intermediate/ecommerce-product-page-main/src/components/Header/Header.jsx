@@ -8,7 +8,7 @@ const Header = () => {
   const { quantityProductsInCard, isOpenShopCart, handleOpenShopCart } =
     useContext(ProductCartContext);
 
-  const [isOpenMenu, setIsOpenMenu] = useState("none");
+  const [isOpenMenu, setIsOpenMenu] = useState("");
 
   const handleOpenMenu = () => {
     isOpenMenu !== "flex" ? setIsOpenMenu("flex") : setIsOpenMenu("none");
@@ -23,29 +23,15 @@ const Header = () => {
         onClick={handleOpenMenu}
       />
       <img src="src/assets/logo.svg" alt="sneakers logo" className="logo" />
-      <button
-        className="shop-cart-button"
-        onClick={() => handleOpenShopCart(true)}
-        quantity={quantityProductsInCard || ""}
-      >
-        <img
-          src="src/assets/icon-cart.svg"
-          alt="cart icon"
-          className="cart-icon"
-        />
-      </button>
-      <img
-        src="src/assets/image-avatar.png"
-        alt="avatar icon"
-        className="avatar"
-      />
       <nav
+        className="navbar"
         style={{ display: isOpenMenu }}
         onClick={({ clientX, currentTarget }) => {
+          if (document.body.offsetWidth > 600) return
           if (clientX > currentTarget.offsetWidth) {
             isOpenMenu !== "flex"
               ? setIsOpenMenu("flex")
-              : setIsOpenMenu("none")
+              : setIsOpenMenu("none");
           }
         }}
       >
@@ -73,6 +59,22 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <button
+        className="shop-cart-button"
+        onClick={() => handleOpenShopCart(true)}
+        quantity={quantityProductsInCard || ""}
+      >
+        <img
+          src="src/assets/icon-cart.svg"
+          alt="cart icon"
+          className="cart-icon"
+        />
+      </button>
+      <img
+        src="src/assets/image-avatar.png"
+        alt="avatar icon"
+        className="avatar"
+      />
       <ProductBasket isOpen={isOpenShopCart} />
     </header>
   );

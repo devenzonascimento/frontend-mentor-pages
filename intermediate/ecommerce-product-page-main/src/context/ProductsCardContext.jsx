@@ -91,7 +91,7 @@ export const ProductCartProvider = ({ children }) => {
 
   const handleOpenShopCart = (isToggle) => {
     if (isToggle) {
-      isOpenShopCart ? setIsOpenShopCart(false) : setIsOpenShopCart(true);
+      setIsOpenShopCart(!isOpenShopCart)
     } else {
       setIsOpenShopCart(true);
     }
