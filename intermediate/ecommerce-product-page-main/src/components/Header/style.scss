@@ -215,6 +215,13 @@
 
         .avatar {
             width: 50px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+
+            &:hover {
+                cursor: pointer;
+                border-color: var(--Orange);
+            }
         }
 
         .shop-cart-button {            
@@ -225,6 +232,12 @@
             .cart-icon {
                 display: block;
                 width: 25px;
+                
+            }
+
+            &:hover .cart-icon {
+                cursor: pointer;
+                filter: brightness(0.3);
             }
 
             &::after {
@@ -253,6 +266,10 @@
                 color: var(--Dark-grayish-blue);
                 text-decoration: none;
 
+                &:hover {
+                    color: var(--Very-dark-blue);
+                }
+
                 &::after {
                     content: "";
                     position: absolute;
@@ -262,10 +279,11 @@
                     height: 5px;
                     width: 0;
                     background-color: var(--Orange);
-                    transition: width 0.3s ease-in-out;
+                    transition: width 0.2s ease-in;
                 }
 
                 &:hover::after {
+                    cursor: pointer;
                     width: 100%;
                 }
             }
