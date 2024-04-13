@@ -4,6 +4,7 @@ const useThumbCarousel = () => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const handleActiveThumb = (index) => {
+    console.log("chamou")
     addActiveStyles(index);
     setImageIndex((prev) => (prev = index));
   };

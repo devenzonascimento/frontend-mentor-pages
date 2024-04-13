@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { ProductCartContext } from "../../context/ProductsCardContext";
 
-import ArrowNavCarousel from "./ArrowNavCarousel";
 import ProductDescription from "./ProductDescription";
 import AddToCartButton from "./AddToCartButton";
 import ProductPrice from "./ProductPrice";
 import QuantityButton from "./QuantityButton";
+import ArrowNavCarousel from "./ArrowNavCarousel";
+import ThumbNavCarousel from "./ThumbNavCarousel";
 
 import "./style.scss";
-import ThumbNavCarousel from "./ThumbNavCarousel";
 
 const ProductPage = () => {
   const { storeProducts } = useContext(ProductCartContext);

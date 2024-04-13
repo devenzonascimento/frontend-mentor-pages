@@ -160,6 +160,10 @@
                 display: block;
                 width: 425px;
                 border-radius: 15px;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
 
             .thumbs-container {
@@ -169,10 +173,15 @@
                 justify-content: space-between;
 
                 .thumbnail {
+                    position: relative;
                     width: 90px;
                     border-radius: 10px;
                     border: 2px solid transparent;
                     overflow: hidden;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
 
                     img {
                         width: 100%;
@@ -180,11 +189,10 @@
                 }
                 
                 .select-thumb {
-                    position: relative;
                     border: 2px solid var(--Orange);
                     
                     &::before {
-                        content: '';
+                        content: "";
                         position: absolute;
                         top: 0;
                         left: 0;
