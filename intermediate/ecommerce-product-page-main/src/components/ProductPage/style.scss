@@ -286,6 +286,10 @@
                     &>img {
                         display: block;
                         width: 12px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
     
                     .quantity {
@@ -306,6 +310,11 @@
                     font-size: 0.9em;
                     font-weight: 700;
                     border-radius: 10px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-image: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.4));
+                    }
     
                     &>img {
                         display: block;

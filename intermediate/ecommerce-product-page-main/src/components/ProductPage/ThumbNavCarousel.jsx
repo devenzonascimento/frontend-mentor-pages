@@ -7,7 +7,14 @@ const ThumbNavCarousel = ({ images, thumbnails }) => {
   return (
     <div className="carousel-container">
       <img src={images[imageIndex]} alt="" className="current-image" />
-      <div className="thumbs-container">
+      <ThumbNav thumbnails={thumbnails} handleActiveThumb={handleActiveThumb}/>
+    </div>
+  );
+};
+
+const ThumbNav = ({ thumbnails, handleActiveThumb }) => {
+  return (
+    <div className="thumbs-container">
         {thumbnails.map((thumb, index) => {
           return (
             <div className={`thumbnail thumb${index}`} key={index}>
@@ -22,8 +29,7 @@ const ThumbNavCarousel = ({ images, thumbnails }) => {
           );
         })}
       </div>
-    </div>
-  );
-};
+  )
+}
 
 export default ThumbNavCarousel;
