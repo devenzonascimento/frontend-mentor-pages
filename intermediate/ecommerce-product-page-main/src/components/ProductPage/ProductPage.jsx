@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductCartContext } from "../../context/ProductsCardContext";
 
 import ProductDescription from "./ProductDescription";
@@ -9,24 +9,41 @@ import ArrowNavCarousel from "./ArrowNavCarousel";
 import ThumbNavCarousel from "./ThumbNavCarousel";
 
 import "./style.scss";
+import CarouselModal from "./CarouselModal";
+import useCarouselImage from "../../hooks/useCarouselImage";
 
 const ProductPage = () => {
   const { storeProducts } = useContext(ProductCartContext);
+  const { images, thumbnails } = storeProducts[1];
+  const { image, handleArrowSwitch, handleThumbSwitch } =
+  useCarouselImage(images);
+  
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const handleModalIsOpen = () => {
+    setModalIsOpen((prev) => !prev);
+  };
 
   return (
     <main>
       {document.body.offsetWidth < 1024 && (
-        <>
-          <ArrowNavCarousel images={storeProducts[1].images} />
-        </>
+        <ArrowNavCarousel
+          images={image}
+          handleArrowSwitch={handleArrowSwitch}
+        />
       )}
       {document.body.offsetWidth >= 1440 && (
-        <>
-          <ThumbNavCarousel
-            images={storeProducts[1].images}
-            thumbnails={storeProducts[1].thumbnails}
+        <div className="carousel-container">
+          <img
+            src={image}
+            alt={image}
+            className="current-image"
+            onClick={handleModalIsOpen}
           />
-        </>
+          <ThumbNavCarousel
+            thumbnails={thumbnails}
+            handleThumbSwitch={handleThumbSwitch}
+          />
+        </div>
       )}
 
       <div className="description-container">
@@ -37,6 +54,15 @@ const ProductPage = () => {
           <AddToCartButton />
         </div>
       </div>
+
+      <CarouselModal
+        modalIsOpen={modalIsOpen}
+        handleModalIsOpen={handleModalIsOpen}
+        image={image}
+        handleArrowSwitch={handleArrowSwitch}
+        handleThumbSwitch={handleThumbSwitch}
+        thumbnails={thumbnails}
+      />
     </main>
   );
 };
