@@ -1,17 +1,26 @@
+import useActiveThumb from "../../hooks/useActiveThumb";
+
 const ThumbNavCarousel = ({ thumbnails, handleThumbSwitch }) => {
+
+  const { addActiveStyles } = useActiveThumb()
+
   return (
     <div className="thumbs-container">
       {thumbnails.map((thumb, index) => {
         return (
-          <div className={`thumbnail thumb${index}`} key={index}>
+          <button className={`thumbnail thumb${index}`} key={index}>
             <img
               src={thumb}
               alt={thumb}
               key={index}
               value={index}
-              onClick={() => handleThumbSwitch(index)}
+              onClick={({target}) => {
+                handleThumbSwitch(index)
+                addActiveStyles(target)
+              }
+              }
             />
-          </div>
+          </button>
         );
       })}
     </div>

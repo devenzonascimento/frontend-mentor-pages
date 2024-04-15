@@ -3,9 +3,12 @@ import { useContext } from "react";
 import { ProductCartContext } from "../../context/ProductsCardContext";
 
 const BasketItem = ({ basketProduct }) => {
-  const { handleRemoveProduct, getQuantityProductsInCard } = useContext(ProductCartContext);
+  const { handleRemoveProduct, getQuantityProductsInCard } =
+    useContext(ProductCartContext);
 
-  const { thumbnail, name, price, quantity } = basketProduct
+  const { thumbnail, name, price, quantity, discount } = basketProduct;
+
+  let finalPrice = discount != 0 ? price - (price * discount) / 100 : price;
 
   return (
     <li className="basket-item">
@@ -13,10 +16,8 @@ const BasketItem = ({ basketProduct }) => {
       <div className="product-details">
         <span className="product-name">{name}</span>
         <span className="product-values">
-          ${price.toFixed(2)} x {quantity}{" "}
-          <strong>
-            ${(price * quantity).toFixed(2)}
-          </strong>
+          ${finalPrice.toFixed(2)} x {quantity}{" "}
+          <strong>${(finalPrice * quantity).toFixed(2)}</strong>
         </span>
       </div>
 
@@ -30,7 +31,7 @@ const BasketItem = ({ basketProduct }) => {
               handleRemoveProduct(index);
               getQuantityProductsInCard();
             }
-          })
+          });
         }}
       />
     </li>

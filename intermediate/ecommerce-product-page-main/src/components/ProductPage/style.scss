@@ -173,8 +173,9 @@
                     position: relative;
                     height: 90px;
                     width: 90px;
-                    border-radius: 10px;
+                    background-color: transparent;
                     border: 2px solid transparent;
+                    border-radius: 10px;
                     overflow: hidden;
                     cursor: pointer;
 
@@ -253,14 +254,17 @@
                     .carousel-icon {
                         position: absolute;
                         top: 50%;
-                        transform: translateY(-50%);
-                        height: 60px;
-                        width: 60px;
+                        height: 65px;
+                        width: 65px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         background-color: white;
                         border-radius: 50%;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
     
                         img {
                             height: 22px;
@@ -270,7 +274,7 @@
     
                     .previous-icon {
                         left: 0;
-                        transform: translateX(-50%);
+                        transform: translate(-50%, -50%);
                         
                         img {
                             margin-right: 3px;
@@ -279,7 +283,7 @@
                     
                     .next-icon {
                         right: 0;
-                        transform: translateX(50%);
+                        transform: translate(50%, -50%);
 
                         img {
                             margin-left: 3px;
@@ -297,8 +301,9 @@
                         position: relative;
                         height: 90px;
                         width: 90px;
-                        border-radius: 10px;
+                        background-color: transparent;
                         border: 2px solid transparent;
+                        border-radius: 10px;
                         overflow: hidden;
                         cursor: pointer;
     

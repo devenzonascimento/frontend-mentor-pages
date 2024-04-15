@@ -16,8 +16,8 @@ const ProductPage = () => {
   const { storeProducts } = useContext(ProductCartContext);
   const { images, thumbnails } = storeProducts[1];
   const { image, handleArrowSwitch, handleThumbSwitch } =
-  useCarouselImage(images);
-  
+    useCarouselImage(images);
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const handleModalIsOpen = () => {
     setModalIsOpen((prev) => !prev);
@@ -26,9 +26,9 @@ const ProductPage = () => {
   return (
     <main>
       {document.body.offsetWidth < 1024 && (
-        <ArrowNavCarousel
-          images={image}
-          handleArrowSwitch={handleArrowSwitch}
+        <ArrowNavCarousel 
+          image={image} 
+          handleArrowSwitch={handleArrowSwitch} 
         />
       )}
       {document.body.offsetWidth >= 1440 && (

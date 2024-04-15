@@ -65,6 +65,7 @@
             .close-icon {
                 height: 15px;
                 width: 15px;
+                filter: brightness(0);
             }
 
             ul {
@@ -191,6 +192,16 @@
                     color: var(--Dark-grayish-blue);
                 }
             }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 100vh;
+            width: 100vw;
+            background-color: transparent;
         }
     }
 }
@@ -400,6 +411,16 @@
                     color: var(--Dark-grayish-blue);
                 }
             }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 100vh;
+            width: 100vw;
+            background-color: transparent;
         }
     }
 }

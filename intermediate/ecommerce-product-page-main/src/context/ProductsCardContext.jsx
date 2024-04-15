@@ -1,4 +1,5 @@
 import { createContext, useState, useReducer } from "react";
+import useToggleBasketModal from "../hooks/useToggleBasketModal";
 
 export const ProductCartContext = createContext();
 
@@ -87,15 +88,7 @@ export const ProductCartProvider = ({ children }) => {
 
   const [quantityProductsInCard, setQuantityProductsInCard] = useState(0);
 
-  const [isOpenShopCart, setIsOpenShopCart] = useState(false);
-
-  const handleOpenShopCart = (isToggle) => {
-    if (isToggle) {
-      setIsOpenShopCart(!isOpenShopCart)
-    } else {
-      setIsOpenShopCart(true);
-    }
-  };
+  const { isOpenShopCart, handleOpenCartModal, handleToggleCartModal, handleOutsideClick } = useToggleBasketModal()
 
   const getQuantityProductsInCard = () => {
     let total = 0;
@@ -145,7 +138,7 @@ export const ProductCartProvider = ({ children }) => {
         getQuantityProductsInCard,
         quantityProductsInCard,
         isOpenShopCart,
-        handleOpenShopCart,
+        handleOpenCartModal, handleToggleCartModal, handleOutsideClick,
         state,
         dispatch,
       }}
