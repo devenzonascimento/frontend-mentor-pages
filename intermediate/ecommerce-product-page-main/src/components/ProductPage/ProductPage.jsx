@@ -31,7 +31,7 @@ const ProductPage = () => {
           handleArrowSwitch={handleArrowSwitch} 
         />
       )}
-      {document.body.offsetWidth >= 1440 && (
+      {document.body.offsetWidth >= 1024 && (
         <div className="carousel-container">
           <img
             src={image}
