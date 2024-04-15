@@ -1,3 +1,4 @@
+// Mobile
 @media (width <= 600px) {
     .header-container {
         display: flex;
@@ -206,6 +207,12 @@
     }
 }
 
+// Tablet
+@media (width > 600px) and (width < 1024px) {
+    
+}
+
+// Desktop
 @media (width >= 1024px) {
     .header-container {
         margin: auto;
