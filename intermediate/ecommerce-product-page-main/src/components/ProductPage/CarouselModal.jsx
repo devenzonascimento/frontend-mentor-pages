@@ -1,5 +1,3 @@
-import useCarouselImage from "../../hooks/useCarouselImage";
-
 import ArrowNavCarousel from "./ArrowNavCarousel";
 import ThumbNavCarousel from "./ThumbNavCarousel";
 

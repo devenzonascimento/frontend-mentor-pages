@@ -8,7 +8,7 @@ const ThumbNavCarousel = ({ thumbnails, handleThumbSwitch }) => {
     <div className="thumbs-container">
       {thumbnails.map((thumb, index) => {
         return (
-          <button className={`thumbnail thumb${index}`} key={index}>
+          <button className={"thumbnail"} key={index}>
             <img
               src={thumb}
               alt={thumb}
@@ -16,7 +16,7 @@ const ThumbNavCarousel = ({ thumbnails, handleThumbSwitch }) => {
               value={index}
               onClick={({target}) => {
                 handleThumbSwitch(index)
-                addActiveStyles(target)
+                //addActiveStyles(target)
               }
               }
             />

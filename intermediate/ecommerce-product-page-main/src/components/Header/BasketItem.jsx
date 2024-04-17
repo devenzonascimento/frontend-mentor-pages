@@ -12,7 +12,7 @@ const BasketItem = ({ basketProduct }) => {
 
   return (
     <li className="basket-item">
-      <img src={thumbnail} alt="" className="thumbnail" />
+      <img src={thumbnail} alt="" className="mini-thumbnail" />
       <div className="product-details">
         <span className="product-name">{name}</span>
         <span className="product-values">
