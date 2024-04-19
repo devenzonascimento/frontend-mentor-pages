@@ -1,11 +1,9 @@
-import { useContext, useEffect } from "react";
-
-import { ProductCartContext } from "../../context/ProductsCardContext";
+import { useProductCartContext } from "../../context/ProductsCardContext";
 
 import BasketItem from "./BasketItem";
 
 const ProductBasket = ({ isOpen, handleOutsideClick }) => {
-  const { basketProducts } = useContext(ProductCartContext);
+  const { basketProducts } = useProductCartContext();
 
   return (
     <>
@@ -17,11 +15,12 @@ const ProductBasket = ({ isOpen, handleOutsideClick }) => {
               {basketProducts != "" ? (
                 <>
                   <ul className="basket-list-items">
-                    {basketProducts.map((basketProduct) => {
+                    {basketProducts.map((basketProduct, index) => {
                       return (
                         <BasketItem
-                          key={basketProduct.id}
                           basketProduct={basketProduct}
+                          listIndex={index}
+                          key={basketProduct.id}
                         />
                       );
                     })}

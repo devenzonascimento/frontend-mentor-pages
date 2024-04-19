@@ -1,4 +1,5 @@
 const Nav = ({ isOpenMenu, handleOpenMenu }) => {
+  
   const handleOutsideClick = ({ clientX, currentTarget }) => {
     if (document.body.offsetWidth > 1024) return;
     if (clientX > currentTarget.offsetWidth) {

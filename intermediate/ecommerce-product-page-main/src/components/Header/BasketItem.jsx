@@ -1,14 +1,11 @@
-import { useContext } from "react";
+import { useProductCartContext } from "../../context/ProductsCardContext";
 
-import { ProductCartContext } from "../../context/ProductsCardContext";
-
-const BasketItem = ({ basketProduct }) => {
-  const { handleRemoveProduct, getQuantityProductsInCard } =
-    useContext(ProductCartContext);
-
+const BasketItem = ({ basketProduct, listIndex }) => {
   const { thumbnail, name, price, quantity, discount } = basketProduct;
 
-  let finalPrice = discount != 0 ? price - (price * discount) / 100 : price;
+  const { handleRemoveProduct } = useProductCartContext();
+
+  const finalPrice = discount != 0 ? price - (price * discount) / 100 : price;
 
   return (
     <li className="basket-item">
@@ -25,14 +22,7 @@ const BasketItem = ({ basketProduct }) => {
         src="src/assets/icon-delete.svg"
         alt="delete icon"
         className="delete-icon"
-        onClick={({ target }) => {
-          document.querySelectorAll(".delete-icon").forEach((button, index) => {
-            if (target === button) {
-              handleRemoveProduct(index);
-              getQuantityProductsInCard();
-            }
-          });
-        }}
+        onClick={() => handleRemoveProduct(listIndex)}
       />
     </li>
   );

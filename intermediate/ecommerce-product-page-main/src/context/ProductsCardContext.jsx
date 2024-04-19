@@ -1,4 +1,4 @@
-import { createContext, useState, useReducer } from "react";
+import { createContext, useState, useReducer, useContext } from "react";
 import useToggleBasketModal from "../hooks/useToggleBasketModal";
 
 export const ProductCartContext = createContext();
@@ -21,7 +21,8 @@ const storeProducts = {
     ],
     brand: "Sneaker Company",
     name: "Fall Limited Edition Sneakers",
-    description: "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    description:
+      "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
     price: 250.0,
     discount: 50,
   },
@@ -40,7 +41,8 @@ const storeProducts = {
     ],
     brand: "Sneaker Company",
     name: "Produto Teste 2 ",
-    description: "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    description:
+      "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
     price: 550.0,
     discount: 20,
   },
@@ -59,7 +61,8 @@ const storeProducts = {
     ],
     brand: "Sneaker Company",
     name: "Produto Teste 3",
-    description: "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    description:
+      "These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
     price: 90.0,
     discount: 15,
   },
@@ -88,7 +91,12 @@ export const ProductCartProvider = ({ children }) => {
 
   const [quantityProductsInCard, setQuantityProductsInCard] = useState(0);
 
-  const { isOpenShopCart, handleOpenCartModal, handleToggleCartModal, handleOutsideClick } = useToggleBasketModal()
+  const {
+    isOpenShopCart,
+    handleOpenCartModal,
+    handleToggleCartModal,
+    handleOutsideClick,
+  } = useToggleBasketModal();
 
   const getQuantityProductsInCard = () => {
     let total = 0;
@@ -99,7 +107,6 @@ export const ProductCartProvider = ({ children }) => {
   };
 
   const handleAddToCart = () => {
-
     for (let product of basketProducts) {
       if (product.id === id) {
         product.quantity += state.counter;
@@ -119,13 +126,14 @@ export const ProductCartProvider = ({ children }) => {
     basketProducts.push(newProduct);
     setBasketProducts(basketProducts);
 
-    setRequestID((prev) => prev += 1);
+    setRequestID((prev) => (prev += 1));
     return;
   };
 
   const handleRemoveProduct = (index) => {
     basketProducts.splice(index, 1);
     setBasketProducts([...basketProducts]);
+    getQuantityProductsInCard();
   };
 
   return (
@@ -138,7 +146,9 @@ export const ProductCartProvider = ({ children }) => {
         getQuantityProductsInCard,
         quantityProductsInCard,
         isOpenShopCart,
-        handleOpenCartModal, handleToggleCartModal, handleOutsideClick,
+        handleOpenCartModal,
+        handleToggleCartModal,
+        handleOutsideClick,
         state,
         dispatch,
       }}
@@ -148,9 +158,14 @@ export const ProductCartProvider = ({ children }) => {
   );
 };
 
+export const useProductCartContext = () => {
+  const context = useContext(ProductCartContext);
+  return context;
+};
+
 /*
 const [basketProducts, setBasketProducts] = useState([
-    {
+  {
       requestID: 0,
       thumbnail: "src/assets/image-product-1-thumbnail.jpg",
       id: 0,

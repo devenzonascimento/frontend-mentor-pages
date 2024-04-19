@@ -1,10 +1,11 @@
 import { useState, useContext } from "react";
+
 import { ProductCartContext } from "../../context/ProductsCardContext";
 
+import Nav from "./Nav";
 import ProductBasket from "./ProductBasket";
 
 import "./style.scss";
-import Nav from "./Nav";
 
 const Header = () => {
   const {
