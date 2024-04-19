@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
-import useActiveThumb from './useActiveThumb';
+import { useEffect, useState } from "react";
+
+import useActiveThumb from "./useActiveThumb";
 
 const useCarouselImage = (images) => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -21,18 +22,18 @@ const useCarouselImage = (images) => {
     setImageIndex((prev) => (prev = index));
   };
 
-  const { sincActiveStyles } = useActiveThumb()
+  const { sincActiveStyles } = useActiveThumb();
   useEffect(() => {
-    sincActiveStyles(imageIndex)
-  }, [handleThumbSwitch, handleArrowSwitch])
+    if (document.body.offsetWidth >= 1024) sincActiveStyles(imageIndex);
+  }, [handleThumbSwitch, handleArrowSwitch]);
 
-  let image = images[imageIndex]
+  let image = images[imageIndex];
 
   return {
     image,
     handleArrowSwitch,
     handleThumbSwitch,
   };
-}
+};
 
 export default useCarouselImage;

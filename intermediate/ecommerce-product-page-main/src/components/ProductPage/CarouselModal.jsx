@@ -3,7 +3,7 @@ import ThumbNavCarousel from "./ThumbNavCarousel";
 
 const CarouselModal = ({
   modalIsOpen,
-  handleModalIsOpen,
+  handleToggleCarouselModal,
   image,
   thumbnails,
   handleArrowSwitch,
@@ -13,8 +13,8 @@ const CarouselModal = ({
   if (modalIsOpen) {
     return (
       <div className="modal-overlay">
-        <div className="modal-container">
-          <button className="close-button" onClick={handleModalIsOpen}>
+        <dialog className="modal-container">
+          <button className="close-button" onClick={handleToggleCarouselModal}>
             <img src="src/assets/icon-close.svg" alt="close icon" />
           </button>
           <ArrowNavCarousel
@@ -25,7 +25,7 @@ const CarouselModal = ({
             thumbnails={thumbnails}
             handleThumbSwitch={handleThumbSwitch}
           />
-        </div>
+        </dialog>
       </div>
     );
   }

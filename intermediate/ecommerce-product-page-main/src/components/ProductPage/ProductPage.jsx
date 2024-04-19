@@ -19,7 +19,7 @@ const ProductPage = () => {
     useCarouselImage(images);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const handleModalIsOpen = () => {
+  const handleToggleCarouselModal = () => {
     setModalIsOpen((prev) => !prev);
   };
 
@@ -37,7 +37,7 @@ const ProductPage = () => {
             src={image}
             alt={image}
             className="current-image"
-            onClick={handleModalIsOpen}
+            onClick={handleToggleCarouselModal}
           />
           <ThumbNavCarousel
             thumbnails={thumbnails}
@@ -57,7 +57,7 @@ const ProductPage = () => {
 
       <CarouselModal
         modalIsOpen={modalIsOpen}
-        handleModalIsOpen={handleModalIsOpen}
+        handleToggleCarouselModal={handleToggleCarouselModal}
         image={image}
         handleArrowSwitch={handleArrowSwitch}
         handleThumbSwitch={handleThumbSwitch}

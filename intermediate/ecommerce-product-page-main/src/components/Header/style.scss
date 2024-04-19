@@ -209,7 +209,211 @@
 
 // Tablet
 @media (width > 600px) and (width < 1024px) {
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5em;
+        padding: 1.5em;
+        border-bottom: 1px solid var(--Grayish-blue);
+        margin-bottom: 2em;
+
+        img {
+            display: block;
+            width: 35px;
+        }
+
+        .menu-icon {
+            width: 20px;
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+
+        .shop-cart-button {
+            position: relative;
+            background-color: transparent;
+            margin-left: auto;
+
+            &::after {
+                content: attr(quantity);
+                position: absolute;
+                top: -5px;
+                right: -7px;
+                width: 20px;
+                background-color: var(--Orange);
+                font-size: 0.75em;
+                font-weight: 700;
+                color: white;
+                border-radius: 10px;
+            }
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            height: 100vh;
+            width: 65vw;
+            padding: 1.5em;
+            display: none;
+            flex-direction: column;
+            gap: 2.5em;
+            background-color: white;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 65vw;
+                height: 100vh;
+                width: 35vw;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+            }
+
+            .close-icon {
+                height: 25px;
+                width: 25px;
+                filter: brightness(0);
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5em;
+                list-style-type: none;
+
+                li>a {
+                    font-size: 1.6em;
+                    font-weight: 800;
+                    color: var(--Very-dark-blue);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .basket-container {
+            position: fixed;
+            top: 5em;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            background-color: white;
+            width: 65%;
+            border-radius: 12px;
+            box-shadow: 0px 7px 15px 12px rgba(0, 0, 0, 0.15);
+
+            &>h2 {
+                text-align: start;
+                font-size: 1.5em;
+                padding: 1.5rem;
+            }
+
+            .basket {
+                position: relative;
+                min-height: 185px;
+                max-height: 520px;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                flex-direction: column;
+                gap: 1.5em;
+                padding: 1.5rem;
+                border-top: 1px solid var(--Grayish-blue);
+
+                .basket-list-items {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5em;
+                    width: 100%;
+                    overflow: auto;
+                    
+                    .basket-item {
+                        position: relative;
+                        width: 100%;
+                        min-height: 60px;
+                        display: flex;
+                        align-items: center;
+                        gap: 1em;
     
+                        .mini-thumbnail {
+                            display: block;
+                            width: 90px;
+                            border-radius: 5px;
+                        }
+    
+                        .product-details {
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5em;
+                            color: var(--Dark-grayish-blue);
+    
+                            .product-name {                                
+                                text-align: start;
+                                max-width: 90%;
+                                font-size: 1.7em;
+                            }
+    
+                            .product-values { 
+                                text-align: start;
+                                font-size: 1.7em;
+    
+                                &>strong {
+                                    color: black;
+                                }
+                            }
+                        }
+    
+                        .delete-icon {
+                            width: 20px;
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+
+                .checkout-button {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1em;
+                    font-size: 1.2em;
+                    font-weight: 700;
+                    color: white;
+                    background-color: var(--Orange);
+                    border-radius: 10px;
+                }
+
+                &>span {
+                    position: absolute;
+                    top: 45%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 1.5em;
+                    font-weight: 700;
+                    color: var(--Dark-grayish-blue);
+                }
+            }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 100vh;
+            width: 100vw;
+            background-color: transparent;
+        }
+    }
 }
 
 // Desktop
